@@ -1,0 +1,60 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,fleqn]{article}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[active]{srcltx}
+\usepackage{setspace}
+\usepackage{microtype}
+\onehalfspacing
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\setcounter{chapter}{1}
+
+\AtBeginDocument{
+  \def\labelitemi{\large\(\star\)}
+}
+
+\makeatother
+
+
+\begin{document}
+\title{\textbf{\huge{}RSA ENCRYPTION:}}
+\author{AGNI DATTA}
+
+\maketitle
+\tableofcontents{}
+
+\pagebreak{}
+
+\part{EULER'S TOTIENT FUNCTION:}
+
+The totient function $\varphi(n)$, also called Euler's totient function,
+is defined as the number of positive integers $<=n$ that are relatively
+prime to (i.e., do not contain any factor in common with) $n$, where
+1 is counted as being relatively prime to all numbers. Since a number
+less than or equal to and relatively prime to a given number is called
+a totative, the totient function $\varphi(n)$ can be simply defined
+as the number of totatives of $n$.\\
+
+$\displaystyle\varphi(n)=n\prod_{p|n}\bigg(1-\frac{1}{p}\bigg)$
+\\
+
+\subsection{Some Interesting Properties of Euler’s Totient Function:}
+\begin{enumerate}
+\item For a prime number p, $\varphi(p)= p-1$.
+\item For two number $a\:\textrm{and}\:b,\:$ if $gcd(a,b)$ is 1, then
+$\varphi(ab)=\varphi(a)\cdot\varphi(b)$
+\item For any two prime numbers $p\:$and $q$, $\varphi(pq)=(p-1)\cdot(q-1)$.
+This property is used in RSA algorithm. 
+\item If $p\:$ is a prime number, then $\varphi(pk)=p^k - p^{k-1}$. This
+can be proved using Euler’s product formula.
+\item Sum of values of totient functions of all divisors of \textit{n} is equal to \textit{n}.
+\end{enumerate}
+
+\end{document}
