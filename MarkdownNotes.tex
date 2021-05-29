@@ -2,6 +2,7 @@
 \usepackage{fontspec}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\pagestyle{plain}
 \usepackage{setspace}
 \usepackage{microtype}
 \doublespacing
@@ -93,11 +94,9 @@ ____
 \begin{verbatim}
 * POINT 1
 * POINT 2
-\begin{verbatim}
-* NESTED POINT 1
-* NESTED POINT 2
-\end{verbatim}
-*POINT 3
+\begin{description}
+\item [{{*}}] NESTED POINT 1
+\end{description}
 \end{verbatim}
 
 \subsection{ORDERED LIST:}
