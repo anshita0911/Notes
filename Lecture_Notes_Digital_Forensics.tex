@@ -1,17 +1,29 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
 \documentclass[10pt,british,english]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
+\usepackage[latin9]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \pagestyle{plain}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
-\usepackage{color}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{setspace}
 \onehalfspacing
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{multirow}
+
 \AtBeginDocument{
   \def\labelitemi{\large\(\star\)}
 }
@@ -680,7 +692,7 @@ relevant data.}
 
 \section{A FLOW OF EVIDENCE DIAGRAM:}
 
-\includegraphics[scale=0.5]{C:/Users/dungadatta/Pictures/lol}
+\includegraphics[scale=0.5]{\string"Pictures/LNDF (1)\string".png}
 
 \rule[0.5ex]{1\columnwidth}{1pt}
 
@@ -975,9 +987,31 @@ damage caused by the Incident before it can be resolved.
 \end{itemize}
 \rule[0.5ex]{1\columnwidth}{1pt}
 
+\pagebreak{}
+
 \section{INCIDENT PRIORITIZING TABLE:}
 
-\includegraphics[scale=0.6]{C:/Users/dungadatta/Pictures/sd}
-
-\rule[0.5ex]{1\columnwidth}{1pt}
+\begin{tabular}{|c|l|}
+\hline 
+\textbf{CATEGORY} & \textbf{DESCRIPTION}\tabularnewline
+\hline 
+\hline 
+\multirow{4}{*}{\textbf{\textcolor{red}{\Large{}HIGH}}} & The damage caused by the incident increases rapidly. \tabularnewline
+\cline{2-2} 
+ & Work that cannot be completed by the staff is highly time sensitive.\tabularnewline
+\cline{2-2} 
+ & A minor incident can be prevented from becoming a major incident by
+acting immediately.\tabularnewline
+\cline{2-2} 
+ & Several users with VIP status are affected.\tabularnewline
+\hline 
+\multirow{2}{*}{\textbf{\textcolor{orange}{\Large{}MEDIUM}}} & The damage caused by the incident increases considerably over time. \tabularnewline
+\cline{2-2} 
+ & A single user with VIP status is affected. \tabularnewline
+\hline 
+\multirow{2}{*}{\textbf{\textcolor{teal}{\Large{}LOW}}} & The damage caused by the incident only marginally increases over time. \tabularnewline
+\cline{2-2} 
+ & Work that cannot be completed by staff is not time sensitive.\tabularnewline
+\hline 
+\end{tabular}
 \end{document}
