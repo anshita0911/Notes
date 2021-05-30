@@ -3,15 +3,20 @@
 \usepackage{fontspec}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
+\pagestyle{plain}
 \usepackage[active]{srcltx}
 \usepackage{setspace}
 \usepackage{microtype}
 \onehalfspacing
 
 \makeatletter
-\setcounter{chapter}{1}
+
+\providecommand\textquotedblplain{%
+  \bgroup\addfontfeatures{RawFeature=-tlig}\char34\egroup}
+
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
 
 \AtBeginDocument{
   \def\labelitemi{\large\(\star\)}
@@ -31,8 +36,10 @@
 
 \part{EULER'S TOTIENT FUNCTION:}
 
+\medskip{}
+
 The totient function $\varphi(n)$, also called Euler's totient function,
-is defined as the number of positive integers $<=n$ that are relatively
+is defined as the number of positive integers $\leq n$ that are relatively
 prime to (i.e., do not contain any factor in common with) $n$, where
 1 is counted as being relatively prime to all numbers. Since a number
 less than or equal to and relatively prime to a given number is called
@@ -42,7 +49,7 @@ as the number of totatives of $n$.\\
 $\displaystyle\varphi(n)=n\prod_{p|n}\bigg(1-\frac{1}{p}\bigg)$
 \\
 
-\subsection{Some Interesting Properties of Euler’s Totient Function:}
+\subsection{Properties of Euler’s Totient Function:}
 \begin{enumerate}
 \item For a prime number p, $\varphi(p)= p-1$.
 \item For two number $a\:\textrm{and}\:b,\:$ if $gcd(a,b)$ is 1, then
@@ -52,6 +59,133 @@ This property is used in RSA algorithm.
 \item If $p\:$ is a prime number, then $\varphi(pk)=p^k - p^{k-1}$. This
 can be proved using Euler’s product formula.
 \item Sum of values of totient functions of all divisors of \textit{n} is equal to \textit{n}.
+\end{enumerate}
+\pagebreak{}
+
+\part{RSA ENCRYPTION:}
+
+\bigskip{}
+
+
+\section{ASYMMETRIC ENCRYPTION:}
+
+Asymmetric Encryption uses a mathematically related pair of keys for
+encryption and decryption: a public key and a private key. If the
+public key is used for encryption, then the related private key is
+used for decryption; if the private key is used for encryption, then
+the related public key is used for decryption. This is also known
+as Public Key Encryption. 
+
+The two participants in the asymmetric encryption workflow are the
+sender and the receiver; each has its own pair of public and private
+keys. First, the sender obtains the receiver's public key. Next, the
+plaintext or ordinary, readable text is encrypted by the sender using
+the receiver's public key; this creates ciphertext. The ciphertext
+is then sent to the receiver, who decrypts the ciphertext with their
+private key and returns it to legible plaintext.
+
+A visualization of how asymmetric cryptography works A visualization
+of how public and private keys are used in asymmetric cryptography
+Because of the one-way nature of the encryption function, one sender
+is unable to read the messages of another sender, even though each
+has the public key of the receiver.
+
+\bigskip{}
+
+
+\section{HISTORY:}
+
+RSA (Rivest--Shamir--Adleman) is a public-key cryptosystem that
+is widely used for secure data transmission. It is also one of the
+oldest. The acronym RSA comes from the surnames of Ron Rivest, Adi
+Shamir and Leonard Adleman, who publicly described the algorithm in
+1977. An equivalent system was developed secretly, in 1973 at GCHQ
+(the British signals intelligence agency), by the English mathematician
+Clifford Cocks. That system was declassified in 1997.
+
+\bigskip{}
+
+
+\section{DEFINITION:}
+
+In a public-key cryptosystem, the encryption key is public and distinct
+from the decryption key, which is kept secret (private). An RSA user
+creates and publishes a public key based on two large prime numbers,
+along with an auxiliary value. The prime numbers are kept secret.
+Messages can be encrypted by anyone, via the public key, but can only
+be decoded by someone who knows the prime numbers.
+
+The security of RSA relies on the practical difficulty of factoring
+the product of two large prime numbers, the \textquotedbl factoring
+problem\textquotedbl . Breaking RSA encryption is known as the RSA
+problem. Whether it is as difficult as the factoring problem is an
+open question. There are no published methods to defeat the system
+if a large enough key is used.
+
+RSA is a relatively slow algorithm. Because of this, it is not commonly
+used to directly encrypt user data. More often, RSA is used to transmit
+shared keys for symmetric key cryptography, which are then used for
+bulk encryption-decryption.
+
+\pagebreak{}
+
+\section{OPERATION:}
+\begin{center}
+\textbf{The RSA algorithm involves four steps: key generation, key
+distribution, encryption, and decryption.}
+\par\end{center}
+
+\smallskip{}
+
+A basic principle behind RSA is the observation that it is practical
+to find three very large positive integers $e$, $d$, and $n$, such
+that with modular exponentiation for all integers \textit{m} (with
+0 \leq\textit{ m < n}):
+
+$(m^e)^d \equiv m (\bmod\:m)$
+
+and that knowing $e$ and $n$, or even $m$, it can be extremely
+difficult to find $d$. The triple bar ($\equiv$) here denotes modular
+congruence.
+
+In addition, for some operations it is convenient that the order of
+the two exponentiations can be changed and that this relation also
+implies:
+
+$(m^d)^e \equiv m (\bmod\:m)$
+
+\smallskip{}
+
+\begin{center}
+RSA involves a \textit{public key} and a \textit{private key}. 
+\par\end{center}
+
+The public key can be known by everyone, and it is used for encrypting
+messages. The intention is that messages encrypted with the public
+key can only be decrypted in a reasonable amount of time by using
+the private key. The public key is represented by the integers $n$
+and $e$; and, the private key, by the integer $d\:$ (although $n\:$
+is also used during the decryption process, so it might be considered
+to be a part of the private key, too). $m$ represents the message.
+
+\medskip{}
+
+
+\section{KEY GENERATION:}
+
+The keys for the RSA algorithm are generated in the following way:
+\begin{enumerate}
+\item Choose two distinct prime numbers $p$ and $q$
+\begin{itemize}
+\item For security purposes, the integers $p$ and $q$ should be chosen
+at random, and should be similar in magnitude but differ in length
+by a few digits to make factoring harder.
+\item Prime integers can be efficiently found using a primality test. $p$
+and $q$ are kept secret.
+\end{itemize}
+\item Compute $n = p\cdot q$\\. $n$ is used as the modulus for both the
+public and private keys. Its length, usually expressed in bits, is
+the key length. $n$ is released as part of the public key.
 \end{enumerate}
 
 \end{document}
