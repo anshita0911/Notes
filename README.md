@@ -1,5 +1,5 @@
 # Notes
-Notes as collected and written from Lectures and Webinars as a Computer Science Student.
+Notes as collected and written from Lectures, Webinars and Internet as a Computer Science Student.
 
 ## Summary:
 
@@ -10,12 +10,17 @@ Notes as collected and written from Lectures and Webinars as a Computer Science 
 | Markdown                               | Markdown is a lightweight markup language for creating formatted text using a plain-text editor. |
 | RSA                                    | RSA is a public-key cryptosystem that is widely used for secure data transmission. |
 
-## Links:
+## Links
 
-Lecture_Notes_Digital_Forensics.pdf
+### Lecture Notes:
 
-MarkdownNotes.pdf
+- #### **[Lecture Notes On Digital Forensics](https://github.com/datta-agni/Notes/blob/main/Lecture_Notes_Digital_Forensics.tex)**
 
-Notes_Algorithm_Programming_Basic.pdf
+- #### **[Lecture Notes On Introduction to Problem Solving and Programming](https://github.com/datta-agni/Notes/blob/main/Notes_Algorithm_Programming_Basic.tex)** 
 
-RSA_Encryption.pdf
+### Resource Notes:
+
+- #### **[Markdown Notes](https://github.com/datta-agni/Notes/blob/main/MarkdownNotes.tex)**
+
+- #### **[RSA Encryption Notes](https://github.com/datta-agni/Notes/blob/main/RSA_Encryption.tex)** 
+
