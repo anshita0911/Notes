@@ -18,7 +18,7 @@ Notes as collected and written from Lectures, Webinars and Internet as a Compute
 
   #### **Code concerning the implementation of algorithms are to be found in the link below**,
 
-  #### **[Implementation of Algorithms](https://github.com/datta-agni/Java-Codes "Codes")**
+  #### 	**[Implementation of Algorithms](https://github.com/datta-agni/Java-Codes "Codes")**
 
 - #### **[Lecture Notes On Introduction to Problem Solving and Programming](https://github.com/datta-agni/Notes/blob/main/Lecture_Notes/Lecture_Notes_On_Algorithm_Programming_Basic.tex)** 
 
