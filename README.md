@@ -26,5 +26,4 @@ Notes as collected and written from Lectures, Webinars and Internet as a Compute
 
 - #### **[Markdown Notes](https://github.com/datta-agni/Notes/blob/main/Resource_Notes/Notes_On_Markdown.tex)**
 
-- #### **[RSA Encryption Notes](https://github.com/datta-agni/Notes/blob/main/Resource_Notes/Notes_On_RSA_Encryption.tex)** 
-
+- #### **[RSA Encryption Notes](https://github.com/datta-agni/Notes/blob/main/Resource_Notes/Notes_On_RSA_Encryption.tex)**
