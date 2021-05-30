@@ -14,13 +14,13 @@ Notes as collected and written from Lectures, Webinars and Internet as a Compute
 
 ### Lecture Notes:
 
-- #### **[Lecture Notes On Digital Forensics](https://github.com/datta-agni/Notes/blob/main/Lecture_Notes_Digital_Forensics.tex)**
+- #### **[Lecture Notes On Digital Forensics](https://github.com/datta-agni/Notes/blob/main/Lecture_Notes/Lecture_Notes_On_Digital_Forensics.tex)**
 
-- #### **[Lecture Notes On Introduction to Problem Solving and Programming](https://github.com/datta-agni/Notes/blob/main/Notes_Algorithm_Programming_Basic.tex)** 
+- #### **[Lecture Notes On Introduction to Problem Solving and Programming](https://github.com/datta-agni/Notes/blob/main/Lecture_Notes/Lecture_Notes_On_Algorithm_Programming_Basic.tex)** 
 
 ### Resource Notes:
 
-- #### **[Markdown Notes](https://github.com/datta-agni/Notes/blob/main/MarkdownNotes.tex)**
+- #### **[Markdown Notes](https://github.com/datta-agni/Notes/blob/main/Resource_Notes/Notes_On_Markdown.tex)**
 
-- #### **[RSA Encryption Notes](https://github.com/datta-agni/Notes/blob/main/RSA_Encryption.tex)** 
+- #### **[RSA Encryption Notes](https://github.com/datta-agni/Notes/blob/main/Resource_Notes/Notes_On_RSA_Encryption.tex)** 
 
