@@ -1,4 +1,4 @@
-\documentclass[10pt,fleqn]{article}
+\documentclass[12pt,fleqn]{article}
 \usepackage{amsmath}
 \usepackage{fontspec}
 \usepackage{geometry}
@@ -183,9 +183,24 @@ by a few digits to make factoring harder.
 \item Prime integers can be efficiently found using a primality test. $p$
 and $q$ are kept secret.
 \end{itemize}
-\item Compute $n = p\cdot q$\\. $n$ is used as the modulus for both the
+\item Compute $n = p\cdot q$\\ $n$ is used as the modulus for both the
 public and private keys. Its length, usually expressed in bits, is
 the key length. $n$ is released as part of the public key.
+\begin{itemize}
+\item $n$ is used as the modulus for both the public and private keys. 
+\item Its length, usually expressed in bits, is the key length. $n$ is
+released as part of the public key.
+\end{itemize}
+\item Compute $\lambda(n)$, where $\lambda$ is Carmichael's totient function. 
+\begin{itemize}
+\item Since $n = pq, \lambda(n) = \text{lcm}(\lambda(p),\lambda(q))$, and
+since $p$ and $q$ are prime, $\lambda(p) = \varphi(p) = p − 1$
+and likewise $\lambda(q) = q − 1$. 
+\item Hence $\lambda(n) = \text{lcm}(p − 1, q − 1)$. $\lambda(n)$
+is kept secret. 
+\item The $lcm$ may be calculated through the Euclidean algorithm,\\ since
+$\displaystyle \text{lcm}(a,b) = \frac{\mid ab \mid}{gcd(a,b)}$.
+\end{itemize}
 \end{enumerate}
 
 \end{document}
