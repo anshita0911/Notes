@@ -15,11 +15,8 @@
 
 \makeatletter
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-%% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{multirow}
 
 \AtBeginDocument{
@@ -812,7 +809,9 @@ was actually hacked.
 
 \section{SIGNAL TO NOISE RATIO: }
 \begin{quotation}
-\noindent \textcolor{red}{EVERY ALERT IS IMPORTANT.}
+\noindent \begin{center}
+\textcolor{red}{\LARGE{}EVERY ALERT IS IMPORTANT}{\LARGE\par}
+\par\end{center}
 \end{quotation}
 
 \subsection{To illustrate, consider the case of SOC A and SOC B. }
@@ -834,7 +833,7 @@ seriously.
 
 \rule[0.5ex]{1\columnwidth}{1pt}
 
-\part{TRIAGE:}
+\section{TRIAGE:}
 
 The triage process happens between the moment when an alert is triggered
 and the time when an incident response process is initiated. 
