@@ -8,7 +8,7 @@ Notes as collected and written from Lectures, Webinars and Internet as a Compute
 | Introduction Algorithm and Programming | Theory of problem solving through implementation of algorithms. |
 | Digital Forensics                      | Digital forensics is a branch of forensic science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. |
 | Markdown                               | Markdown is a lightweight markup language for creating formatted text using a plain-text editor. |
-| RSA                                    | RSA is a public-key cryptosystem that is widely used for secure data transmission. |
+| RSA                                    | RSA is a asymmetric public-key cryptosystem that is widely used for secure data transmission. |
 
 ## Links
 
