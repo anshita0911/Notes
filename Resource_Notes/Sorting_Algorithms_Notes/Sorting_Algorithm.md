@@ -1,4 +1,4 @@
-# SORTING ALGORITHMS
+# Sorting Algorithms
 
 [TOC]
 
@@ -509,4 +509,3 @@ def shellSort(arr):
             arr[j] = temp
         gap /= 2
 ```
-
