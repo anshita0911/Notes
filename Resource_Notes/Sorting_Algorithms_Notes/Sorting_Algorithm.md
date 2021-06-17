@@ -2,11 +2,11 @@
 
 [TOC]
 
-
+------
 
 # Sorting
 
-Sorting refers to the operation or technique of arranging and rearranging sets of data in some specific order. A collection of records called a list where every record has one or more fields. The fields which contain a unique value for each record is termed as the *key* field. 
+Sorting refers to the operation or technique of arranging and rearranging sets of data in some specific order. A collection of records called a list where every record has one or more fields. The fields which contain a unique value for each record is termed as the key field. 
 
 Sorting is the operation performed to arrange the records of a table or list in some order according to some specific ordering criterion. Sorting is performed according to some key value of each record.
 
@@ -225,7 +225,8 @@ function bubbleSort( list : array of items )
       end if
       
    	end for
-	end function 
+
+end function 
 	return list
 ```
 
@@ -269,13 +270,11 @@ This will reduce the execution time and helps to optimize the bubble sort.
 
 ```basic
 function bubbleSort(array)
-  swapped <- false
-  
-    for i <- 1 to indexOfLastUnsortedElement-1
-    	if leftElement > rightElement
-      		swap leftElement and rightElement
-      		swapped <- true
-
+    swapped <- false
+    	for i <- 1 to indexOfLastUnsortedElement-1
+    		if leftElement > rightElement
+      			swap leftElement and rightElement
+      			swapped <- true
 	end bubbleSort
 ```
 
@@ -319,8 +318,6 @@ Insertion sort is a sorting algorithm that places an unsorted element at its sui
 
 Insertion sort works similarly as we sort cards in our hand in a card game. We assume that the first card is already sorted then, we select an unsorted card. If the unsorted card is greater than the card in hand, it is placed on the right otherwise, to the left. In the same way, other unsorted cards are taken and put in their right place.
 
-A similar approach is used by insertion sort.
-
 ## Pseudo Code
 
 ```basic
@@ -346,7 +343,7 @@ function insertionSort( A : array of items )
       
    end for
 	
-    end function
+   end function
 ```
 
 ## Code
