@@ -194,7 +194,9 @@ def printList(arr):
 
 # Bubble Sort
 
-Bubble Sort Algorithm is used to arrange **N elements** in ascending order, and for that, you have to begin with 0th element and compare it with the first element. If the **0th** element is found greater than the **1st** element, then the swapping operation will be performed, that is the two values will get interchanged. In this way, all the elements of the array get compared.
+Bubble Sort Algorithm is used to arrange N elements in ascending order, and for that, you have to begin with 0th element and compare it with the first element. If the 0^th^ element is found greater than the 1^st^ element, then the swapping operation will be performed, that is the two values will get interchanged. 
+
+In this way, all the elements of the array get compared.
 
 ## Pseudo Code
 
@@ -316,7 +318,9 @@ def bubbleSort(array):
 
 Insertion sort is a sorting algorithm that places an unsorted element at its suitable place in each iteration.
 
-Insertion sort works similarly as we sort cards in our hand in a card game. We assume that the first card is already sorted then, we select an unsorted card. If the unsorted card is greater than the card in hand, it is placed on the right otherwise, to the left. In the same way, other unsorted cards are taken and put in their right place.
+Insertion sort works similarly as we sort cards in our hand in a card game. We assume that the first card is already sorted then, we select an unsorted card. If the unsorted card is greater than the card in hand, it is placed on the right otherwise, to the left. 
+
+In the same way, other unsorted cards are taken and put in their right place.
 
 ## Pseudo Code
 
@@ -424,7 +428,9 @@ def selectionSort(array, size):
 
 Shell sort is a highly efficient sorting algorithm and is based on insertion sort algorithm. This algorithm avoids large shifts as in case of insertion sort, if the smaller value is to the far right and has to be moved to the far left.
 
-This algorithm uses insertion sort on a widely spread elements, first to sort them and then sorts the less widely spaced elements. This spacing is termed as interval. This interval is calculated based on Knuth's formula as,
+This algorithm uses insertion sort on a widely spread elements, first to sort them and then sorts the less widely spaced elements. This spacing is termed as interval. 
+
+This interval is calculated based on Knuth's formula as,
 
 > **Knuth's Formula**
 
