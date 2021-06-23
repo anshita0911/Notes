@@ -1,0 +1,341 @@
+\documentclass[10pt,british]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{luainputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{tocdepth}{2}
+\usepackage{babel}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{microtype}
+\onehalfspacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+\providecommand{\tabularnewline}{\\}
+\@ifundefined{date}{}{\date{}}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+\usepackage[nobottomtitles*]{titlesec}
+\fancyhead[RO]{\textsl{TABLE OF CONTENTS}}
+\fancyhead{}
+\fancyhead[RE,LO]{\leftmark}
+
+\AtBeginDocument{
+  \def\labelitemi{\(\star\)}
+}
+
+\makeatother
+
+\begin{document}
+\title{\textbf{\Huge{}CRYPTOGRAPHY}}
+\author{AGNI DATTA}
+\maketitle
+\begin{center}
+\rule[0.5ex]{0.5\columnwidth}{0.75pt}
+\par\end{center}
+\begin{quotation}
+\begin{center}
+\textbf{`We can only see a short distance ahead, but we can see plenty
+there that needs to be done'}
+\par\end{center}
+\begin{center}
+Alan Turing
+\par\end{center}
+
+\end{quotation}
+\medskip{}
+
+\begin{abstract}
+{\normalsize{}Cryptography --- the science of secret writing ---
+is an ancient art; the first documented use of cryptography in writing
+dates back to circa 1900 B.C. when an Egyptian scribe used non-standard
+hieroglyphs in an inscription. Some experts argue that cryptography
+appeared spontaneously sometime after writing was invented, with applications
+ranging from diplomatic missives to war-time battle plans. It is no
+surprise, then, that new forms of cryptography came soon after the
+widespread development of computer communications. In data and telecommunications,
+cryptography is necessary when communicating over any untrusted medium,
+which includes just about any network, particularly the Internet.}{\normalsize\par}
+
+\pagebreak{}
+\end{abstract}
+\tableofcontents{}
+
+\pagebreak{}
+
+\section{Glossary}
+\begin{center}
+\rule[0.5ex]{450bp}{0.75pt}
+\par\end{center}
+
+\subsubsection{Cryptography}
+
+The transformed message cipher an algorithm for transforming an intelligible
+message into one that is unintelligible by transposition and/or substitution
+methods the art or science encompassing the principles and methods
+of transforming an intelligible message into one that is unintelligible,
+and then re-transforming that message back to its original form.
+
+\subsubsection{Plaintext}
+
+The original intelligible message.
+
+\subsubsection{Ciphertext}
+
+The transformed message cipher an algorithm for transforming an intelligible
+message into one that is unintelligible by transposition and/or substitution
+methods.
+
+\noindent\fbox{\begin{minipage}[t]{1\columnwidth - 2\fboxsep - 2\fboxrule}%
+\begin{center}
+$ P\:=\:\textbf{plaintext}\:\textbf{and}\:C\:=\:\textbf{ciphertext} $
+\par\end{center}%
+\end{minipage}}
+
+\subsubsection{Key}
+
+Some critical information used by the cipher, known only to the sender
+and receiver.
+
+\subsubsection{Encipher(Encode)}
+
+The process of converting plaintext to ciphertext using a cipher and
+a key.
+
+\subsubsection{Decipher(Decode)}
+
+The process of converting ciphertext back into plaintext using a cipher
+and a key.
+
+\subsubsection{Cryptanalysis}
+
+The study of principles and methods of transforming an unintelligible
+message back into an intelligible message without knowledge of the
+key. Also called codebreaking.
+
+\subsubsection{Cryptology}
+
+The sum of both cryptography and cryptanalysis.
+
+\subsubsection{Code}
+
+An algorithm for transforming an intelligible message into an unintelligible
+one using a code-book.
+
+\pagebreak{}
+
+\section{Introduction To Cryptography}
+\begin{center}
+\rule[0.5ex]{450bp}{0.75pt}
+\par\end{center}
+
+\subsection{Cryptography}
+
+Cryptography, or cryptology, is the practice and study of techniques
+for secure communication in the presence of third parties called adversaries.
+More generally, cryptography is about constructing and analysing protocols
+that prevent third parties or the public from reading private messages;
+various aspects in information security such as data confidentiality,
+data integrity, authentication, and non-repudiation are central to
+modern cryptography. Modern cryptography exists at the intersection
+of the disciplines of mathematics, computer science, electrical engineering,
+communication science, and physics. Applications of cryptography include
+electronic commerce, chip-based payment cards, digital currencies,
+computer passwords, and military communications. There are five primary
+functions of cryptography:
+\begin{center}
+\begin{tabular}{|l||l|}
+\hline 
+\textbf{\small{}Privacy/Confidentiality} & {\small{}Ensuring that no one can read the message except the intended
+receiver.}\tabularnewline
+\hline 
+\textbf{\small{}Authentication} & {\small{}The process of proving one's identity.}\tabularnewline
+\hline 
+\textbf{\small{}Integrity} & {\small{}Assuring the receiver that the received message has not been
+altered in any way.}\tabularnewline
+\hline 
+\textbf{\small{}Non-repudiation} & {\small{}A mechanism to prove that the sender really.}\tabularnewline
+\hline 
+\textbf{\small{}Key exchange} & {\small{}The method by which crypto keys are shared between sender
+and receiver.}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+\medskip{}
+
+In cryptography, we start with the unencrypted data, referred to as
+plaintext. Plaintext is encrypted into ciphertext, which will in turn
+(usually) be decrypted back into usable plaintext. The encryption
+and decryption is based upon the type of cryptography scheme being
+employed and some form of key. For those who like formulas, this process
+is sometimes written as:
+
+$$ C = E_k(P) $$
+$$ P = D_k(C) $$
+
+where, 
+
+$P$ = plaintext,
+
+$C$ = ciphertext,
+
+$E$ = the encryption method,
+
+$D$ = the decryption method,
+
+$k$ = the key.
+
+Given this, there are other functions that might be supported by crypto
+and other terms that one might hear:
+\begin{itemize}
+\item \textbf{Forward Secrecy (aka Perfect Forward Secrecy):} This feature
+protects past encrypted sessions from compromise even if the server
+holding the messages is compromised. This is accomplished by creating
+a different key for every session so that compromise of a single key
+does not threaten the entirely of the communications. 
+\item \textbf{Perfect Security:} A system that is unbreakable and where
+the ciphertext conveys no information about the plaintext or the key.
+To achieve perfect security, the key has to be at least as long as
+the plaintext, making analysis and even brute-force attacks impossible.
+One-time pads are an example of such a system.
+\item \textbf{Deniable Authentication (aka Message Repudiation): }A method
+whereby participants in an exchange of messages can be assured in
+the authenticity of the messages but in such a way that senders can
+later plausibly deny their participation to a third-party.
+\end{itemize}
+In many of the descriptions below, two communicating parties will
+be referred to as Alice and Bob; this is the common nomenclature in
+the crypto field and literature to make it easier to identify the
+communicating parties. If there is a third and fourth party to the
+communication, they will be referred to as Carol and Dave, respectively.
+A malicious party is referred to as Mallory, an eavesdropper as Eve,
+and a trusted third party as Trent.
+
+Finally, cryptography is most closely associated with the development
+and creation of the mathematical algorithms used to encrypt and decrypt
+messages, whereas cryptanalysis is the science of analysing and breaking
+encryption schemes. Cryptology is the umbrella term referring to the
+broad study of secret writing, and encompasses both cryptography and
+cryptanalysis.
+
+\subsection{Cryptanalysis}
+
+\paragraph{\textmd{Cryptanalysis is the study of analysing information systems
+in order to study the hidden aspects of the systems. Cryptanalysis
+is used to breach cryptographic security systems and gain access to
+the contents of encrypted messages, even if the cryptographic key
+is unknown. In addition to mathematical analysis of cryptographic
+algorithms, cryptanalysis includes the study of side-channel attacks
+that do not target weaknesses in the cryptographic algorithms themselves,
+but instead exploit weaknesses in their implementation.}}
+
+\subsection{Private-Key Cryptography}
+
+\paragraph{\textmd{Symmetric-key algorithms are algorithms for cryptography
+that use the same cryptographic keys for both the encryption of plaintext
+and the decryption of ciphertext. The keys may be identical, or there
+may be a simple transformation to go between the two keys. The keys,
+in practice, represent a shared secret between two or more parties
+that can be used to maintain a private information link. The requirement
+that both parties have access to the secret key is one of the main
+drawbacks of symmetric-key encryption, in comparison to public-key
+encryption (also known as asymmetric-key encryption).}}
+\begin{center}
+$$ P\xrightarrow{\:\textbf{private key}\:}C\xrightarrow{\:\textbf{private key}\:}P $$
+\par\end{center}
+
+\subsection{Public-Key Cryptography}
+
+\paragraph{\textmd{Public-key cryptography, or asymmetric cryptography, is a
+cryptographic system that uses pairs of keys: public keys (which may
+be known to others), and private keys (which may never be known by
+any except the owner). The generation of such key pairs depends on
+cryptographic algorithms which are based on mathematical problems
+termed one-way functions. Effective security requires keeping the
+private key private; the public key can be openly distributed without
+compromising security.}}
+
+\paragraph{\textmd{In such a system, any person can encrypt a message using
+the intended receiver's public key, but that encrypted message can
+only be decrypted with the receiver's private key. This allows, for
+instance, a server program to generate a cryptographic key intended
+for a suitable symmetric-key cryptography, then to use a client's
+openly-shared public key to encrypt that newly generated symmetric
+key. The server can then send this encrypted symmetric key over an
+insecure channel to the client; only the client can decrypt it using
+the client's private key (which pairs with the public key used by
+the server to encrypt the message). With the client and server both
+having the same symmetric key, they can safely use symmetric key encryption
+(likely much faster) to communicate over otherwise-insecure channels.
+This scheme has the advantage of not having to manually pre-share
+symmetric keys (a fundamentally difficult problem) while gaining the
+higher data throughput advantage of symmetric-key cryptography.}}
+
+\paragraph{\textmd{With public-key cryptography, robust authentication is also
+possible. A sender can combine a message with a private key to create
+a short digital signature on the message. Anyone with the sender's
+corresponding public key can combine that message with a claimed digital
+signature; if the signature matches the message, the origin of the
+message is verified (i.e., it must have been made by the owner of
+the corresponding private key).}}
+
+\paragraph{\textmd{Public key algorithms are fundamental security primitives
+in modern cryptosystems, including applications and protocols which
+offer assurance of the confidentiality, authenticity and non-availability
+of electronic communications and data storage. They underpin numerous
+Internet standards, such as Transport Layer Security (TLS), S/MIME,
+PGP, and GPG. Some public key algorithms provide key distribution
+and secrecy (e.g., Diffie--Hellman key exchange), some provide digital
+signatures (e.g., Digital Signature Algorithm), and some provide both
+(e.g., RSA). Compared to symmetric encryption, asymmetric encryption
+is rather slower than good symmetric encryption, too slow for many
+purposes. Today's cryptosystems (such as TLS, Secure Shell) use both
+symmetric encryption and asymmetric encryption.}}
+\begin{center}
+$$ P\xrightarrow{\:\textbf{public key}\:}C\xrightarrow{\:\textbf{private key}\:}P $$
+\par\end{center}
+
+\subsection{Hash Function}
+
+\paragraph{\textmd{A hash function is any function that can be used to map data
+of arbitrary size to fixed-size values. The values returned by a hash
+function are called hash values, hash codes, digests, or simply hashes.
+The values are usually used to index a fixed-size table called a hash
+table. Use of a hash function to index a hash table is called hashing
+or scatter storage addressing.}}
+
+\paragraph{\textmd{Hash functions and their associated hash tables are used
+in data storage and retrieval applications to access data in a small
+and nearly constant time per retrieval, and require an amount of storage
+space only fractionally greater than the total space required for
+the data or records themselves. Hashing is a computationally and storage
+space efficient form of data access which avoids the non-linear access
+time of ordered and unordered lists and structured trees, and the
+often exponential storage requirements of direct access of state spaces
+of large or variable-length keys.}}
+
+\paragraph{\textmd{Use of hash functions relies on statistical properties of
+key and function interaction: worst case behaviour is intolerably
+bad with a vanishingly small probability, and average case behaviour
+can be nearly optimal (minimal collision).}}
+
+\paragraph{\textmd{Hash functions are related to (and often confused with) checksums,
+check digits, fingerprints, lossy compression, randomization functions,
+error-correcting codes, and ciphers. Although the concepts overlap
+to some extent, each one has its own uses and requirements and is
+designed and optimized differently. The hash functions differ from
+the concepts numbered mainly in terms of data integrity.}}
+\begin{center}
+$$ P\xrightarrow{\:\textbf{hash function}\:}C $$
+\par\end{center}
+\end{document}
