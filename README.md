@@ -20,7 +20,7 @@ Notes as collected and written from Lectures, Webinars and Internet as a Compute
 
   #### 	**Code concerning the implementation of algorithms are to be found in the link below**,
 
-  #### 			**[Implementation of Algorithms](https://github.com/datta-agni/Java-Codes "Codes")**
+  ####  **[Implementation of Algorithms](https://github.com/datta-agni/Java-Codes "Codes")**
 
 ### Resource Notes:
 
