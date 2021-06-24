@@ -1,5 +1,3 @@
-%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[british]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{luainputenc}
@@ -23,12 +21,9 @@
 
 \makeatletter
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-%% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 
 \@ifundefined{date}{}{\date{}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \makeatletter
 \@addtoreset{section}{part}
 \makeatother
@@ -38,7 +33,7 @@
 \fancyhead[RE,LO]{\leftmark}
 
 \AtBeginDocument{
-  \def\labelitemi{\large\(\bullet\)}
+  \def\labelitemi{\large\(\star\)}
 }
 
 \makeatother
@@ -526,7 +521,7 @@ $$ P\xrightarrow{\:\textbf{private key}\:}C\xrightarrow{\:\textbf{private key}\:
 \medskip{}
 
 
-\subsubsection{Challenge of Private-Key Cryptosystem }
+\subsubsection{Challenge of Private-Key Cryptosystem}
 
 There are two restrictive challenges of employing symmetric key cryptography.
 \begin{itemize}
@@ -693,14 +688,14 @@ $$ P\xrightarrow{\:\textbf{hash function}\:}C $$
 \hline 
 \textbf{Relation between Keys} & Equal & Not Equal, but mathematically related\tabularnewline
 \hline 
-\textbf{Encryption Key} & Symmetric & Public\tabularnewline
+\textbf{Encryption Key} & Private/Symmetric & Public/Asymmetric\tabularnewline
 \hline 
-\textbf{Decryption Key} & Symmetric & Private\tabularnewline
+\textbf{Decryption Key} & Private/Symmetric & Private/Asymmetric\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
 
-\subsection{Attacks On Cryptosystems}
+\subsection{Attacks on Cryptosystems}
 
 Attacks are typically categorized based on the action performed by
 the attacker. An attack, thus, can be passive or active.
@@ -761,13 +756,13 @@ In case of proprietary algorithms, security is ensured through obscurity.
 Private algorithms may not be the strongest algorithms as they are
 developed in-house and may not be extensively investigated for weakness.
 
-Secondly, they allow communication among closed group only. Hence
-they are not suitable for modern communication where people communicate
-with large number of known or unknown entities. Also, according to
-Kerckhoff\textquoteright s principle, the algorithm is preferred to
-be public with strength of encryption lying in the key. Thus, the
-first assumption about security environment is that the encryption
-algorithm is known to the attacker.
+\noindent Secondly, they allow communication among closed group only.
+Hence they are not suitable for modern communication where people
+communicate with large number of known or unknown entities. Also,
+according to Kerckhoff\textquoteright s principle, the algorithm is
+preferred to be public with strength of encryption lying in the key.
+Thus, the first assumption about security environment is that the
+encryption algorithm is known to the attacker.
 \item \textbf{Availability of Ciphertext}
 
 We know that once the plaintext is encrypted into ciphertext, it is
@@ -804,81 +799,178 @@ key, the attacked system is considered as broken or compromised.
 
 Based on the methodology used, attacks on cryptosystems are categorized
 as follows \textminus{}
-\begin{itemize}
-\item \textbf{Ciphertext Only Attacks (COA) \textminus{} }In this method,
-the attacker has access to a set of ciphertext(s). He does not have
-access to corresponding plaintext. COA is said to be successful when
-the corresponding plaintext can be determined from a given set of
-ciphertext. Occasionally, the encryption key can be determined from
-this attack. Modern cryptosystems are guarded against ciphertext-only
-attacks.
-\item \textbf{Known Plaintext Attack (KPA) \textminus{} }In this method,
-the attacker knows the plaintext for some parts of the ciphertext.
-The task is to decrypt the rest of the ciphertext using this information.
-This may be done by determining the key or via some other method.
-The best example of this attack is linear cryptanalysis against block
-ciphers.
-\item \textbf{Chosen Plaintext Attack (CPA) \textminus{}} In this method,
-the attacker has the text of his choice encrypted. So he has the ciphertext-plaintext
-pair of his choice. This simplifies his task of determining the encryption
-key. An example of this attack is differential cryptanalysis applied
-against block ciphers as well as hash functions. A popular public
-key cryptosystem, RSA is also vulnerable to chosen-plaintext attacks.
-\item \textbf{Dictionary Attack \textminus{}} This attack has many variants,
-all of which involve compiling a \textquoteleft dictionary\textquoteright .
+
+\subsubsection{Ciphertext Only Attacks (COA) }
+
+In this method, the attacker has access to a set of ciphertext(s).
+He does not have access to corresponding plaintext. COA is said to
+be successful when the corresponding plaintext can be determined from
+a given set of ciphertext. Occasionally, the encryption key can be
+determined from this attack. Modern cryptosystems are guarded against
+ciphertext-only attacks.
+
+\subsubsection{Known Plaintext Attack (KPA)}
+
+In this method, the attacker knows the plaintext for some parts of
+the ciphertext. The task is to decrypt the rest of the ciphertext
+using this information. This may be done by determining the key or
+via some other method. The best example of this attack is linear cryptanalysis
+against block ciphers.
+
+\subsubsection{Chosen Plaintext Attack (CPA)}
+
+In this method, the attacker has the text of his choice encrypted.
+So he has the ciphertext-plaintext pair of his choice. This simplifies
+his task of determining the encryption key. An example of this attack
+is differential cryptanalysis applied against block ciphers as well
+as hash functions. A popular public key cryptosystem, RSA is also
+vulnerable to chosen-plaintext attacks.
+
+\subsubsection{Dictionary Attack}
+
+This attack has many variants, all of which involve compiling a \textquoteleft dictionary\textquoteright .
 In simplest method of this attack, attacker builds a dictionary of
 ciphertexts and corresponding plaintexts that he has learnt over a
 period of time. In future, when an attacker gets the ciphertext, he
 refers the dictionary to find the corresponding plaintext.
-\item \textbf{Brute Force Attack (BFA) \textminus{}} In this method, the
-attacker tries to determine the key by attempting all possible keys.
-If the key is 8 bits long, then the number of possible keys is 28
-= 256. The attacker knows the ciphertext and the algorithm, now he
-attempts all the 256 keys one by one for decryption. The time to complete
-the attack would be very high if the key is long.
-\item \textbf{Birthday Attack \textminus{}} This attack is a variant of
-brute-force technique. It is used against the cryptographic hash function.
-When students in a class are asked about their birthdays, the answer
-is one of the possible 365 dates. Let us assume the first student's
-birthdate is 3rd Aug. Then to find the next student whose birthdate
-is 3rd Aug, we need to enquire 1.25{*}\textsurd 365 \ensuremath{\approx}
-25 students. Similarly, if the hash function produces 64 bit hash
-values, the possible hash values are 1.8x1019. By repeatedly evaluating
+
+\subsubsection{Brute Force Attack (BFA)}
+
+In this method, the attacker tries to determine the key by attempting
+all possible keys. If the key is 8 bits long, then the number of possible
+keys is $2^8 = 256$. The attacker knows the ciphertext and the algorithm,
+now he attempts all the 256 keys one by one for decryption. The time
+to complete the attack would be very high if the key is long.
+
+\subsubsection{Birthday Attack}
+
+This attack is a variant of brute-force technique. It is used against
+the cryptographic hash function. When students in a class are asked
+about their birthdays, the answer is one of the possible 365 dates.
+Let us assume the first student's birthdate is $3^{\text{rd}}$ August.
+Then to find the next student whose birthdate is $3^{\text{rd}}$
+August, we need to enquire $\displaystyle 1.25 \times \sqrt{365} \approx 25$
+students. Similarly, if the hash function produces 64 bit hash values,
+the possible hash values are $1.8\times1019$. By repeatedly evaluating
 the function for different inputs, the same output is expected to
-be obtained after about 5.1x109 random inputs. If the attacker is
-able to find two different inputs that give the same hash value, it
-is a collision and that hash function is said to be broken.
-\item \textbf{Man in Middle Attack (MIM) \textminus{}} The targets of this
-attack are mostly public key cryptosystems where key exchange is involved
-before communication takes place.
+be obtained after about $5.1\times109$ random inputs. If the attacker
+is able to find two different inputs that give the same hash value,
+it is a collision and that hash function is said to be broken.
 
-Host A wants to communicate to host B, hence requests public key of
-B.
+\subsubsection{Man in Middle Attack (MIM)}
 
-An attacker intercepts this request and sends his public key instead.
-
-Thus, whatever host A sends to host B, the attacker is able to read.
-
-In order to maintain communication, the attacker re-encrypts the data
-after reading with his public key and sends to B.
-
-The attacker sends his public key as A\textquoteright s public key
-so that B takes it as if it is taking it from A.
-\item \textbf{Side Channel Attack (SCA) \textminus{}} This type of attack
-is not against any particular type of cryptosystem or algorithm. Instead,
-it is launched to exploit the weakness in physical implementation
-of the cryptosystem.
-\item \textbf{Timing Attacks \textminus{}} They exploit the fact that different
-computations take different times to compute on processor. By measuring
-such timings, it is be possible to know about a particular computation
-the processor is carrying out. For example, if the encryption takes
-a longer time, it indicates that the secret key is long.
-\item \textbf{Power Analysis Attacks \textminus{} }These attacks are similar
-to timing attacks except that the amount of power consumption is used
-to obtain information about the nature of the underlying computations.
-\item \textbf{Fault analysis Attacks \textminus{}} In these attacks, errors
-are induced in the cryptosystem and the attacker studies the resulting
-output for useful information.
+The targets of this attack are mostly public key cryptosystems where
+key exchange is involved before communication takes place.
+\begin{itemize}
+\item Host $\mathbb{A}$ wants to communicate to host $\mathbb{B}$, hence
+requests public key of $\mathbb{B}$.
+\item An attacker intercepts this request and sends his public key instead.
+\item Thus, whatever host $\mathbb{A}$ sends to host $\mathbb{B}$, the
+attacker is able to read.
+\item In order to maintain communication, the attacker re-encrypts the data
+after reading with his public key and sends to $\mathbb{B}$.
+\item The attacker sends his public key as $\mathbb{A}$\textquoteright s
+public key so that $\mathbb{B}$ takes it as if it is taking it from
+$\mathbb{A}$.
 \end{itemize}
 
+\subsubsection{Side Channel Attack (SCA)}
+
+This type of attack is not against any particular type of cryptosystem
+or algorithm. Instead, it is launched to exploit the weakness in physical
+implementation of the cryptosystem.
+
+\subsubsection{Timing Attacks}
+
+They exploit the fact that different computations take different times
+to compute on processor. By measuring such timings, it is be possible
+to know about a particular computation the processor is carrying out.
+For example, if the encryption takes a longer time, it indicates that
+the secret key is long.
+
+\subsubsection{Power Analysis Attacks}
+
+These attacks are similar to timing attacks except that the amount
+of power consumption is used to obtain information about the nature
+of the underlying computations.
+
+\subsubsection{Fault analysis Attacks}
+
+In these attacks, errors are induced in the cryptosystem and the attacker
+studies the resulting output for useful information.
+
+\subsection{Practicality of Attacks}
+
+The attacks on cryptosystems described here are highly academic, as
+majority of them come from the academic community. In fact, many academic
+attacks involve quite unrealistic assumptions about environment as
+well as the capabilities of the attacker. For example, in chosen-ciphertext
+attack, the attacker requires an impractical number of deliberately
+chosen plaintext-ciphertext pairs. It may not be practical altogether.
+
+Nonetheless, the fact that any attack exists should be a cause of
+concern, particularly if the attack technique has the potential for
+improvement.
+
+\vfill{}
+
+\pagebreak{}
+
+\section{Symmetric Cryptosystems}
+
+\subsection{Ancient Cryptosystems}
+
+Before proceeding further, we shall discuss some facts about historical
+cryptosystems:
+\begin{itemize}
+\item All of these systems are based on symmetric key encryption scheme.
+\item The only security service these systems provide is confidentiality
+of information.
+\item Unlike modern systems which are digital and treat data as binary numbers,
+the earlier systems worked on alphabets as basic element.
+\item These earlier cryptographic systems are also referred to as Ciphers.
+In general, a cipher is simply just a set of steps (an algorithm)
+for performing both an encryption, and the corresponding decryption.
+\end{itemize}
+
+\subsubsection{Caesar/Roman Emperors Cipher}
+
+It is a mono-alphabetic cipher wherein each letter of the plaintext
+is substituted by another letter to form the ciphertext. It is a simplest
+form of substitution cipher scheme.
+
+This cryptosystem is generally referred to as the Shift Cipher. The
+concept is to replace each alphabet by another alphabet which is \textquoteleft shifted\textquoteright{}
+by some fixed number between 0 and 25.
+
+For this type of scheme, both sender and receiver agree on a \textquoteleft secret
+shift number\textquoteright{} for shifting the alphabet. This number
+which is between 0 and 25 becomes the key of encryption.
+
+The name \textquoteleft Caesar Cipher\textquoteright{} is occasionally
+used to describe the Shift Cipher when the \textquoteleft shift of
+three\textquoteright{} is used.
+
+\paragraph*{Process of Shift Cipher}
+\begin{itemize}
+\item In order to encrypt a plaintext letter, the sender positions the sliding
+ruler underneath the first set of plaintext letters and slides it
+to LEFT by the number of positions of the secret shift.
+\item The plaintext letter is then encrypted to the ciphertext letter on
+the sliding ruler underneath. The result of this process is depicted
+in the following illustration for an agreed shift of three positions.
+In this case, the plaintext \textquoteleft EXAMPLE\textquoteright{}
+is encrypted to the ciphertext \textquoteleft HADPSOH\textquoteright .
+Here is the ciphertext alphabet for a Shift of 3 :
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{F} & \textbf{G} & \textbf{H} & \textbf{I} & \textbf{J} & \textbf{K} & \textbf{L} & \textbf{M} & \textbf{N} & \textbf{O} & \textbf{P} & \textbf{Q} & \textbf{R} & \textbf{S} & \textbf{T} & \textbf{U} & \textbf{V} & \textbf{W} & \textbf{X} & \textbf{Y} & \textbf{Z}\tabularnewline
+\hline 
+\hline 
+\textbf{D} & \textbf{E} & \textbf{F} & \textbf{G} & \textbf{H} & \textbf{I} & \textbf{J} & \textbf{K} & \textbf{L} & \textbf{M} & \textbf{N} & \textbf{O} & \textbf{P} & \textbf{Q} & \textbf{R} & \textbf{S} & \textbf{T} & \textbf{U} & \textbf{V} & \textbf{W} & \textbf{X} & \textbf{Y} & \textbf{Z} & \textbf{A} & \textbf{B} & \textbf{C}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
 \end{document}
