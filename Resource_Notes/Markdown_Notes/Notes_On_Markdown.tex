@@ -1,11 +1,16 @@
-\documentclass[10pt]{article}
+\documentclass[11pt,british]{article}
 \usepackage{fontspec}
+\setmonofont{JetBrains Mono}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \pagestyle{plain}
 \usepackage{setspace}
 \usepackage{microtype}
 \doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=false]
+ {hyperref}
 
 \makeatletter
 \AtBeginDocument{
@@ -14,7 +19,8 @@
 
 \makeatother
 
-
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
 \begin{document}
 \title{\textbf{MARKDOWN NOTES}}
 \author{AGNI DATTA}
