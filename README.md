@@ -1,5 +1,5 @@
 # Notes
-Notes as collected and written from Lectures, Webinars and Internet as a Computer Science Student.
+Notes written from Lectures, Webinars and Internet resources while studying as a Computer Science Student.
 
 ## Summary:
 
