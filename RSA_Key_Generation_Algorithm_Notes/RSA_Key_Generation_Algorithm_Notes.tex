@@ -1,0 +1,62 @@
+\documentclass[12pt,british]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{luainputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{tocdepth}{2}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{microtype}
+\onehalfspacing
+\makeatletter
+\@ifundefined{date}{}{\date{}}
+\author{}
+\usepackage{iftex}
+\usepackage {fancybox}
+\AtBeginDocument{
+  \def\labelitemi{\(\star\)}
+}
+
+\makeatother
+\usepackage{babel}
+\begin{document}
+\title{\textbf{\Huge{}RSA ALGORITHM}}
+\maketitle
+\begin{center}
+\rule[0.5ex]{0.5\columnwidth}{0.75pt}
+\par\end{center}
+\begin{center}
+\textbf{\LARGE{}Key Generation}{\LARGE\par}
+\par\end{center}
+\medskip{}
+\noindent\fbox{\begin{minipage}[t]{1\columnwidth - 2\fboxsep - 2\fboxrule}
+
+\subsection{Select two huge primes numbers,}
+
+$ p \: \text{and} \: q $
+
+\subsection{Calculate,}
+
+$ n = p \times q $
+
+\subsection{Calculate Euler's Totient Function,}
+
+$ \varphi (n) = (p-1) \times (q-1) $
+
+\subsection{Choose the value of e such that,}
+
+$ d \equiv e^{-1} \bmod \varphi(n) \rightarrow ed \bmod \varphi(n) = 1 $
+
+\subsection{Public Key,}
+
+$ \{e,n\} $
+
+\subsection{Private Key,}
+
+$ \{d,n\} $%
+\end{minipage}}
+\end{document}
