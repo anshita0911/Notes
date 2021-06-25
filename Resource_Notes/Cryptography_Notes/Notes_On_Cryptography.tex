@@ -29,6 +29,7 @@
 \fancyhead[RO]{\textsl{TABLE OF CONTENTS}}
 \fancyhead{}
 \fancyhead[RE,LO]{\leftmark}
+
 \AtBeginDocument{
   \def\labelitemi{\large\(\star\)}
 }
@@ -69,6 +70,8 @@ which includes just about any network, particularly the Internet.}{\normalsize\p
 \pagebreak{}
 
 \tableofcontents{}
+
+\vfill{}
 
 \pagebreak{}
 
@@ -245,7 +248,7 @@ numerous means starting from physical securing to the use of mathematical
 algorithms for data encryption.
 \item \textbf{Data Integrity :} It is security service that deals with identifying
 any alteration to the data. The data may get modified by an unauthorized
-entity intentionally or accidently. Integrity service confirms that
+entity intentionally or accidentally. Integrity service confirms that
 whether data is intact or not since it was last created, transmitted,
 or stored by an authorized user. Data integrity cannot prevent the
 alteration of data, but provides a means for detecting whether data
@@ -483,16 +486,14 @@ For example, the hidden message may be in invisible ink between the
 visible lines of a private letter. Some implementations of steganography
 that lack a shared secret are forms of security through obscurity,
 and key-dependent steganographic schemes adhere to Kerckhoffs's principle.
-
 The advantage of steganography over cryptography alone is that the
 intended secret message does not attract attention to itself as an
 object of scrutiny. Plainly visible encrypted messages, no matter
 how unbreakable they are, arouse interest and may in themselves be
-incriminating in countries in which encryption is illegal.
-
-Whereas cryptography is the practice of protecting the contents of
-a message alone, steganography is concerned with concealing the fact
-that a secret message is being sent and its contents.
+incriminating in countries in which encryption is illegal. Whereas
+cryptography is the practice of protecting the contents of a message
+alone, steganography is concerned with concealing the fact that a
+secret message is being sent and its contents.
 
 Steganography includes the concealment of information within computer
 files. In digital steganography, electronic communications may include
@@ -837,7 +838,7 @@ vulnerable to chosen-plaintext attacks.
 
 \subsubsection{Dictionary Attack}
 
-This attack has many variants, all of which involve compiling a \textquoteleft dictionary \textquoteright .
+This attack has many variants, all of which involve compiling a \textquoteleft dictionary\textquoteright .
 In simplest method of this attack, attacker builds a dictionary of
 ciphertexts and corresponding plaintexts that he has learnt over a
 period of time. In future, when an attacker gets the ciphertext, he
@@ -964,7 +965,7 @@ The name \textbf{\textquoteleft Caesar Cipher\textquoteright{}} is
 occasionally used to describe the Shift Cipher when the \textbf{\textquoteleft shift
 of three\textquoteright{}} is used.
 
-\paragraph*{Process of Shift Cipher}
+\subsubsection*{Process of Shift Cipher}
 \begin{itemize}
 \item In order to encrypt a plaintext letter, the sender positions the sliding
 ruler underneath the first set of plaintext letters and slides it
@@ -1009,13 +1010,13 @@ below \textminus{}
 \end{tabular}{\footnotesize\par}
 \par\end{center}
 
-\paragraph*{Algorithm}
+\subsubsection*{Algorithm}
 \begin{description}
 \item [{Encryption}] : $C \equiv E(k,p) \equiv (p+k) \bmod 26$
 \item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 26$
 \end{description}
 
-\paragraph{Security Value}
+\paragraph{Security Value : }
 
 Caesar Cipher is not a secure cryptosystem because there are only
 26 possible keys to try out. An attacker can carry out an exhaustive
@@ -1023,15 +1024,15 @@ key search with available limited computing resources.
 
 \subsubsection{ROT13}
 
-Rotation 13 (ROT13)\footnote{ROT13 is a famous shift cipher and widely used for basic cryptographic
-problems and in CTF problems..} is a simple letter substitution cipher that replaces a letter with
+Rotation 13 (ROT13)\footnote{ROT13 is a famous shift cipher and widely used for beginner level
+cryptographic problems and in CTF problems.} is a simple letter substitution cipher that replaces a letter with
 the $13^{th}$ letter after it in the alphabet. ROT13 is a special
 case of the Caesar cipher. Because there are 26 letters $(2\times13)$
 in the basic Latin alphabet, ROT13 is its own inverse; that is, to
 undo ROT13, the same algorithm is applied, so the same action can
 be used for encoding and decoding.
 
-\paragraph*{Algorithm}
+\subsubsection*{Algorithm}
 \begin{description}
 \item [{Encryption}] : $C \equiv E(k,P) \equiv (P+k) \bmod 13$
 \item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 13$
@@ -1049,7 +1050,7 @@ is often cited as a canonical example of weak encryption.
 \subsubsection{ROT47}
 
 Rotation 47 (ROT47)\footnote{ROT47 though more secure than ROT13 is not secure enough. It is also
-widely used in basic cryptographic problems.} is a derivative of ROT13 which, in addition to scrambling the basic
+widely used in basic and beginner level cryptographic problems.} is a derivative of ROT13 which, in addition to scrambling the basic
 letters, treats numbers and common symbols. Instead of using the sequence
 A--Z as the alphabet, ROT47 uses a larger set of characters from
 the common character encoding known as ASCII. Specifically, the 7-bit
@@ -1063,7 +1064,7 @@ because ROT47 introduces numbers and symbols into the mix without
 discrimination, it is more immediately obvious that the text has been
 enciphered.
 
-\paragraph*{Security Value}
+\paragraph*{Security Value : }
 
 Though far stronger than ROT13. It is still a type of shift cipher
 and hence can be deciphered using frequency analysis and exhaustive
@@ -1095,7 +1096,7 @@ for the English language:
 \par\end{center}
 
 \begin{center}
-\includegraphics{ENG_FREQ}
+\includegraphics[scale=0.75]{ENG_FREQ}
 \par\end{center}
 
 \medskip{}
