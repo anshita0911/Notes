@@ -3,8 +3,8 @@ Notes written from Lectures, Webinars and Internet resources while studying as a
 
 ## Summary:
 
-| SUBJECT                                                      | DESCRIPTION                                                  |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
+|                           SUBJECT                            | DESCRIPTION                                                  |
+| :----------------------------------------------------------: | :----------------------------------------------------------- |
 | [Algorithms and Programming Basics](https://github.com/datta-agni/Notes/blob/main/Algorithm_Basics_Notes/Algorithm_Basics_Notes.tex) | The theoretical basics of algorithms, flowcharts, pseudo codes and programming. Useful to understand what does problem solving, logical thinking and programming actually mean. Codes and Programs are available [here](https://github.com/datta-agni/Java-Codes 'here'). |
 | [Cryptography Notes](https://github.com/datta-agni/Notes/blob/main/Cryptography_Notes/Cryptography_Notes.tex) | Contains from ground up the basics of cryptography and cryptanalysis. Notes are updated regularly and are not complete. These notes are detailed and contains all the important techniques a beginner should learn. |
 | [Data Structure Operational Complexity](https://github.com/datta-agni/Notes/blob/main/DS_Basic_Complexity_Notes/DS_Basic_Complexity_Notes.tex) | Contains a cheat-sheet which details complexity of basic data structures and basic operations performed on them. |
