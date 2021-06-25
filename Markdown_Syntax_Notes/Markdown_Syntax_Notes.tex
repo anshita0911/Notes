@@ -1,0 +1,147 @@
+\documentclass[11pt,british]{article}
+\usepackage{fontspec}
+\setmonofont{JetBrains Mono}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\pagestyle{plain}
+\usepackage{setspace}
+\usepackage{microtype}
+\doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+\AtBeginDocument{
+  \def\labelitemi{\Large\(\bullet\)}
+}
+
+\makeatother
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\begin{document}
+\title{\textbf{MARKDOWN NOTES}}
+\author{AGNI DATTA}
+
+\maketitle
+{\small{}\tableofcontents{}}{\small\par}
+
+\pagebreak{}
+
+\section{MARKDOWN:}
+\begin{itemize}
+\item Lightweight Markup language with a plain text formatting syntax.
+\item No tags.
+\item Can be easily converted into HTML/XHTML/\LaTeX\: and other formats.
+\item It is extremely readable, understandable and easily edited.
+\item WYSISYG type format with a few formatting options.
+\item Highly portable.
+\end{itemize}
+
+\section{USES OF MARKDOWN:}
+\begin{itemize}
+\item Technical Documentation.
+\item Posts in websites.
+\item Used in static sites generators.
+\end{itemize}
+
+\section{BASIC FORMATTING:}
+
+\subsection{HEADINGS:}
+\begin{verbatim}
+>> # - HEADING 1
+>> ## - HEADING 2
+>> ### - HEADING 3
+>> #### - HEADING 4
+>> #####.....N - HEADING N
+\end{verbatim}
+
+\subsection{ITALICS:}
+\begin{verbatim}
+>> *TEXT INSIDE WILL BE ITALICS*
+>> _TEXT INSIDE WILL BE ITALICS_
+\end{verbatim}
+
+\subsection{STRONG TEXT:}
+\begin{verbatim}
+>> **TEXT INSIDE WILL BE STRONG**
+>> __TEXT INSIDE WILL BE STRONG__
+\end{verbatim}
+
+\subsection{STRIKE-TROUGH TEXT:}
+\begin{verbatim}
+>> ~~TEXT INSIDE WILL BE STROKED OUT~~
+\end{verbatim}
+
+\subsection{HORIZONTAL RULE:}
+\begin{verbatim}
+>> - - -
+>> ____
+\end{verbatim}
+
+\subsection{ESCAPE SEQUENCE FOR SPECIAL CHARACTER:}
+\begin{verbatim}
+>> /SPECIAL SEQUENCE/
+\end{verbatim}
+
+\subsection{BLOCK QUOTE TEXT:}
+\begin{verbatim}
+>> >THIS IS A QUOTE
+\end{verbatim}
+
+\subsection{LINK TEXT:}
+\begin{verbatim}
+>> [NAME OF THE LINK]{ACTUAL LINK"TITLE OF THE LINK"}
+\end{verbatim}
+
+\subsection{UNORDERED LIST:}
+\begin{verbatim}
+>>  * POINT 1
+	* POINT 2
+			* NESTED POINT 1
+\end{verbatim}
+
+\subsection{ORDERED LIST:}
+\begin{verbatim}
+>> 1. ITEM 1
+>> 2. ITEM 2
+>> 3. ITEM 3
+>> 4. ITEM 4
+\end{verbatim}
+
+\subsection{INLINE CODE BLOCK:}
+\begin{verbatim}
+>> '<p> THIS IS A PARAGRAPH <p>'
+\end{verbatim}
+
+\subsection{IMAGE:}
+\begin{verbatim}
+>> ![IMAGE NAME] (LOCATION OF THE IMAGE)
+\end{verbatim}
+
+\subsection{CODE BLOCKS:}
+\begin{verbatim}
+>> ''' (LANGUAGE SYNTAX)
+	CODE 
+	....................
+	'''
+\end{verbatim}
+
+\subsection{TABLES:}
+\begin{verbatim}
+>>  | COLUMN 1 | COLUMN 2 |
+>>  | -------- | -------- |
+>>  | DATA     | DATA     |
+>>  | DATA     | DATA     |
+\end{verbatim}
+
+\subsection{TASK LISTS:}
+\begin{verbatim}
+>> * [x] TASK 1
+>> * [x] TASK 2
+>> * [ ] TASK 3
+\end{verbatim}
+
+\end{document}
