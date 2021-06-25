@@ -8,7 +8,6 @@
 \setcounter{secnumdepth}{4}
 \usepackage{babel}
 \usepackage{array}
-\usepackage{calc}
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -80,7 +79,7 @@ which includes just about any network, particularly the Internet.}{\normalsize\p
 \rule[0.5ex]{450bp}{0.75pt}
 \par\end{center}
 
-\subsubsection{Cryptography}
+\subsection{Cryptography}
 
 The transformed message cipher an algorithm for transforming an intelligible
 message into one that is unintelligible by transposition and/or substitution
@@ -88,50 +87,50 @@ methods the art or science encompassing the principles and methods
 of transforming an intelligible message into one that is unintelligible,
 and then re-transforming that message back to its original form.
 
-\subsubsection{Cryptanalysis}
+\subsection{Cryptanalysis}
 
 The study of principles and methods of transforming an unintelligible
 message back into an intelligible message without knowledge of the
 key. Also called codebreaking.
 
-\subsubsection{Cryptology}
+\subsection{Cryptology}
 
 The sum of both cryptography and cryptanalysis.
 
-\subsubsection{Cryptosystem}
+\subsection{Cryptosystem}
 
 A system which converts plain text to cipher text or cipher text to
 plain text by the application of encryption or decryption algorithm.
 The key generation for encryption and decryption algorithms is also
 part of a cryptosystem
 
-\subsubsection{Key}
+\subsection{Key}
 
 Some critical information used by the cipher, known only to the sender
 and receiver.
 
-\subsubsection{Code}
+\subsection{Code}
 
 An algorithm for transforming an intelligible message into an unintelligible
 one using a code-book.
 
-\subsubsection{Decipher(Decode)}
+\subsection{Decipher(Decode)}
 
 The process of converting ciphertext back into plaintext using a cipher
 and a key.
 
-\subsubsection{Encipher(Encode)}
+\subsection{Encipher(Encode)}
 
 The process of converting plaintext to ciphertext using a cipher and
 a key.
 
-\subsubsection{Encryption Algorithm}
+\subsection{Encryption Algorithm}
 
 It is a mathematical process that produces a ciphertext for any given
 plaintext and encryption key. It is a cryptographic algorithm that
 takes plaintext and an encryption key as input and produces a ciphertext.
 
-\subsubsection{Decryption Algorithm}
+\subsection{Decryption Algorithm}
 
 It is a mathematical process, that produces a unique plaintext for
 any given ciphertext and decryption key. It is a cryptographic algorithm
@@ -139,32 +138,32 @@ that takes a ciphertext and a decryption key as input, and outputs
 a plaintext. The decryption algorithm essentially reverses the encryption
 algorithm and is thus closely related to it.
 
-\subsubsection{Encryption Key}
+\subsection{Encryption Key}
 
 It is a value that is known to the sender. The sender inputs the encryption
 key into the encryption algorithm along with the plaintext in order
 to compute the ciphertext.
 
-\subsubsection{Decryption Key}
+\subsection{Decryption Key}
 
 It is a value that is known to the receiver. The decryption key is
 related to the encryption key, but is not always identical to it.
 The receiver inputs the decryption key into the decryption algorithm
 along with the ciphertext in order to compute the plaintext.
 
-\subsubsection{Interceptor}
+\subsection{Interceptor}
 
 An interceptor (an attacker) is an unauthorized entity who attempts
 to determine the plaintext. He can see the ciphertext and may know
 the decryption algorithm. He, however, must never know the decryption
 key.
 
-\subsubsection{Plaintext}
+\subsection{Plaintext}
 
 The original intelligible message. It is the data to be protected
 during transmission.
 
-\subsubsection{Ciphertext}
+\subsection{Ciphertext}
 
 The transformed message cipher an algorithm for transforming an intelligible
 message into one that is unintelligible by transposition and/or substitution
@@ -172,26 +171,19 @@ methods. It is the scrambled version of the plaintext produced by
 the encryption algorithm using a specific the encryption key. The
 ciphertext is not guarded. It flows on public channel. It can be intercepted
 or compromised by anyone who has access to the communication channel.
-\begin{center}
-\noindent\fbox{\begin{minipage}[c][1\totalheight][s]{1\linewidth - 2\fboxsep - 2\fboxrule}%
-\begin{center}
-$ P\:=\:\textbf{plaintext}\:\text{and}\:C\:=\:\textbf{ciphertext} $
-\par\end{center}%
-\end{minipage}}
-\par\end{center}
 
-\subsubsection{Notation}
-\begin{verse}
-$P$ = plaintext,
+\subsection{Notation}
 
-$C$ = ciphertext,
+\begin{tabular}{>{\raggedright}p{3cm}l}
+{\large{}$P$} & {\large{}plaintext}\tabularnewline
+{\large{}$C$} & {\large{}ciphertext}\tabularnewline
+{\large{}$E$} & {\large{}the encryption method}\tabularnewline
+{\large{}$D$} & {\large{}the decryption method}\tabularnewline
+{\large{}$k$} & {\large{}the key}\tabularnewline
+\end{tabular}
 
-$E$ = the encryption method,
+\vfill{}
 
-$D$ = the decryption method,
-
-$k$ = the key.
-\end{verse}
 \pagebreak{}
 
 \section{Introduction To Cryptography and Related Topics}
