@@ -8,7 +8,7 @@ Notes written from Lectures, Webinars and Internet resources while studying as a
 | Introduction Algorithm and Programming | Theory of problem solving through implementation of algorithms. |
 | Digital Forensics                      | Digital forensics is a branch of forensic science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. |
 | Markdown                               | Contains notes on basic Markdown syntax. Markdown is a viable option for writing proper structured files, readmes, educational notes for students of Computer Science. |
-| RSA                                    | RSA is a asymmetric public-key cryptosystem that is widely used for secure data transmission. |
+| RSA Key Generation Algorithm           | Contains a cheat-sheet for the the RSA key generation algorithm. |
 
 ## Links
 
