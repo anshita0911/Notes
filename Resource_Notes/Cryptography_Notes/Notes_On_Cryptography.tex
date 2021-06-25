@@ -1,3 +1,5 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
 \documentclass[british]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{luainputenc}
@@ -5,6 +7,7 @@
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\setcounter{secnumdepth}{4}
 \usepackage{babel}
 \usepackage{array}
 \usepackage{calc}
@@ -19,9 +22,15 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
  {hyperref}
+
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+
 \@ifundefined{date}{}{\date{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \makeatletter
 \@addtoreset{section}{part}
 \makeatother
@@ -965,7 +974,7 @@ The name \textbf{\textquoteleft Caesar Cipher\textquoteright{}} is
 occasionally used to describe the Shift Cipher when the \textbf{\textquoteleft shift
 of three\textquoteright{}} is used.
 
-\subsubsection*{Process of Shift Cipher}
+\paragraph{Process of Shift Cipher}
 \begin{itemize}
 \item In order to encrypt a plaintext letter, the sender positions the sliding
 ruler underneath the first set of plaintext letters and slides it
@@ -1010,13 +1019,13 @@ below \textminus{}
 \end{tabular}{\footnotesize\par}
 \par\end{center}
 
-\subsubsection*{Algorithm}
+\paragraph{Algorithm}
 \begin{description}
-\item [{Encryption}] : $C \equiv E(k,p) \equiv (p+k) \bmod 26$
-\item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 26$
+\item [{Encryption:}] $C \equiv E(k,p) \equiv (p+k) \bmod 26$
+\item [{Decryption:}] $P \equiv D(k,C) \equiv (C-k) \bmod 26$
 \end{description}
 
-\paragraph{Security Value : }
+\paragraph{Security Value :}
 
 Caesar Cipher is not a secure cryptosystem because there are only
 26 possible keys to try out. An attacker can carry out an exhaustive
@@ -1032,13 +1041,13 @@ in the basic Latin alphabet, ROT13 is its own inverse; that is, to
 undo ROT13, the same algorithm is applied, so the same action can
 be used for encoding and decoding.
 
-\subsubsection*{Algorithm}
+\paragraph{Algorithm}
 \begin{description}
-\item [{Encryption}] : $C \equiv E(k,P) \equiv (P+k) \bmod 13$
-\item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 13$
+\item [{Encryption}] : $C \equiv E(P,k=13) \equiv (P+13) \bmod 26$
+\item [{Decryption}] : $P \equiv D(C,k=13) \equiv (C-13) \bmod 26$
 \end{description}
 
-\paragraph*{Security Value}
+\paragraph{Security Value : }
 
 ROT13 cipher algorithm is considered as special case of Caesar Cipher.
 It is not a very secure algorithm and can be broken easily with frequency
@@ -1096,7 +1105,7 @@ for the English language:
 \par\end{center}
 
 \begin{center}
-\includegraphics[scale=0.75]{ENG_FREQ}
+\includegraphics{ENG_FREQ}
 \par\end{center}
 
 \medskip{}
