@@ -11,6 +11,7 @@
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{microtype}
 \onehalfspacing
@@ -18,11 +19,8 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
  {hyperref}
-
 \makeatletter
-
 \providecommand{\tabularnewline}{\\}
-
 \@ifundefined{date}{}{\date{}}
 \makeatletter
 \@addtoreset{section}{part}
@@ -31,7 +29,6 @@
 \fancyhead[RO]{\textsl{TABLE OF CONTENTS}}
 \fancyhead{}
 \fancyhead[RE,LO]{\leftmark}
-
 \AtBeginDocument{
   \def\labelitemi{\large\(\star\)}
 }
@@ -68,9 +65,9 @@ surprise, then, that new forms of cryptography came soon after the
 widespread development of computer communications. In data and telecommunications,
 cryptography is necessary when communicating over any untrusted medium,
 which includes just about any network, particularly the Internet.}{\normalsize\par}
-
-\pagebreak{}
 \end{abstract}
+\pagebreak{}
+
 \tableofcontents{}
 
 \pagebreak{}
@@ -180,6 +177,18 @@ $ P\:=\:\textbf{plaintext}\:\text{and}\:C\:=\:\textbf{ciphertext} $
 \end{minipage}}
 \par\end{center}
 
+\subsubsection{Notation}
+\begin{verse}
+$P$ = plaintext,
+
+$C$ = ciphertext,
+
+$E$ = the encryption method,
+
+$D$ = the decryption method,
+
+$k$ = the key.
+\end{verse}
 \pagebreak{}
 
 \section{Introduction To Cryptography and Related Topics}
@@ -828,7 +837,7 @@ vulnerable to chosen-plaintext attacks.
 
 \subsubsection{Dictionary Attack}
 
-This attack has many variants, all of which involve compiling a \textquoteleft dictionary\textquoteright .
+This attack has many variants, all of which involve compiling a \textquoteleft dictionary \textquoteright .
 In simplest method of this attack, attacker builds a dictionary of
 ciphertexts and corresponding plaintexts that he has learnt over a
 period of time. In future, when an attacker gets the ciphertext, he
@@ -907,7 +916,6 @@ attacks involve quite unrealistic assumptions about environment as
 well as the capabilities of the attacker. For example, in chosen-ciphertext
 attack, the attacker requires an impractical number of deliberately
 chosen plaintext-ciphertext pairs. It may not be practical altogether.
-
 Nonetheless, the fact that any attack exists should be a cause of
 concern, particularly if the attack technique has the potential for
 improvement.
@@ -917,8 +925,11 @@ improvement.
 \pagebreak{}
 
 \section{Symmetric Cryptosystems}
+\begin{center}
+\rule[0.5ex]{450bp}{0.75pt}
+\par\end{center}
 
-\subsection{Ancient Cryptosystems}
+\subsubsection{Ancient Cryptosystems}
 
 Before proceeding further, we shall discuss some facts about historical
 cryptosystems:
@@ -933,6 +944,8 @@ In general, a cipher is simply just a set of steps (an algorithm)
 for performing both an encryption, and the corresponding decryption.
 \end{itemize}
 
+\subsection{Shift Ciphers}
+
 \subsubsection{Caesar/Roman Emperors Cipher}
 
 It is a mono-alphabetic cipher wherein each letter of the plaintext
@@ -940,16 +953,16 @@ is substituted by another letter to form the ciphertext. It is a simplest
 form of substitution cipher scheme.
 
 This cryptosystem is generally referred to as the Shift Cipher. The
-concept is to replace each alphabet by another alphabet which is \textquoteleft shifted\textquoteright{}
+concept is to replace each alphabet by another alphabet which is \textbf{\textquoteleft shifted\textquoteright{}}
 by some fixed number between 0 and 25.
 
 For this type of scheme, both sender and receiver agree on a \textquoteleft secret
 shift number\textquoteright{} for shifting the alphabet. This number
 which is between 0 and 25 becomes the key of encryption.
 
-The name \textquoteleft Caesar Cipher\textquoteright{} is occasionally
-used to describe the Shift Cipher when the \textquoteleft shift of
-three\textquoteright{} is used.
+The name \textbf{\textquoteleft Caesar Cipher\textquoteright{}} is
+occasionally used to describe the Shift Cipher when the \textbf{\textquoteleft shift
+of three\textquoteright{}} is used.
 
 \paragraph*{Process of Shift Cipher}
 \begin{itemize}
@@ -959,18 +972,205 @@ to LEFT by the number of positions of the secret shift.
 \item The plaintext letter is then encrypted to the ciphertext letter on
 the sliding ruler underneath. The result of this process is depicted
 in the following illustration for an agreed shift of three positions.
-In this case, the plaintext \textquoteleft EXAMPLE\textquoteright{}
-is encrypted to the ciphertext \textquoteleft HADPSOH\textquoteright .
+In this case, the plaintext \textbf{\textquoteleft EXAMPLE\textquoteright{}}
+is encrypted to the ciphertext \textbf{\textquoteleft HADPSOH\textquoteright }.
 Here is the ciphertext alphabet for a Shift of 3 :
 \end{itemize}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline 
-{\small{}A} & {\small{}B} & {\small{}C} & {\small{}D} & {\small{}E} & {\small{}F} & {\small{}G} & {\small{}H} & {\small{}I} & {\small{}J} & {\small{}K} & {\small{}L} & {\small{}M} & {\small{}N} & {\small{}O} & {\small{}P} & {\small{}Q} & {\small{}R} & {\small{}S} & {\small{}T} & {\small{}U} & {\small{}V} & {\small{}W} & {\small{}X} & {\small{}Y} & {\small{}Z}\tabularnewline
+{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
 \hline 
 \hline 
-{\small{}D} & {\small{}E} & {\small{}F} & {\small{}G} & {\small{}H} & {\small{}I} & {\small{}J} & {\small{}K} & {\small{}L} & {\small{}M} & {\small{}N} & {\small{}O} & {\small{}P} & {\small{}Q} & {\small{}R} & {\small{}S} & {\small{}T} & {\small{}U} & {\small{}V} & {\small{}W} & {\small{}X} & {\small{}Y} & {\small{}Z} & {\small{}A} & {\small{}B} & {\small{}C}\tabularnewline
+{\footnotesize{}$C_t$} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C}\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
+\begin{itemize}
+\item On receiving the ciphertext, the receiver who also knows the secret
+shift, positions his sliding ruler underneath the ciphertext alphabet
+and slides it to RIGHT by the agreed shift number, 3 in this case.
+\item He then replaces the ciphertext letter by the plaintext letter on
+the sliding ruler underneath. Hence the ciphertext \textbf{\textquoteleft HADPSOH\textquoteright{}}
+is decrypted to \textbf{\textquoteleft EXAMPLE\textquoteright }. To
+decrypt a message encoded with a Shift of 3, generate the plaintext
+alphabet using a shift of \textquoteleft -3\textquoteright{} as shown
+below \textminus{}
+\end{itemize}
+\begin{center}
+{\footnotesize{}}%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
+\hline 
+\hline 
+{\footnotesize{}$C_t$} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W}\tabularnewline
+\hline 
+\end{tabular}{\footnotesize\par}
+\par\end{center}
+
+\paragraph*{Algorithm}
+\begin{description}
+\item [{Encryption}] : $C \equiv E(k,p) \equiv (p+k) \bmod 26$
+\item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 26$
+\end{description}
+
+\paragraph{Security Value}
+
+Caesar Cipher is not a secure cryptosystem because there are only
+26 possible keys to try out. An attacker can carry out an exhaustive
+key search with available limited computing resources.
+
+\subsubsection{ROT13}
+
+Rotation 13 (ROT13)\footnote{ROT13 is a famous shift cipher and widely used for basic cryptographic
+problems and in CTF problems..} is a simple letter substitution cipher that replaces a letter with
+the $13^{th}$ letter after it in the alphabet. ROT13 is a special
+case of the Caesar cipher. Because there are 26 letters $(2\times13)$
+in the basic Latin alphabet, ROT13 is its own inverse; that is, to
+undo ROT13, the same algorithm is applied, so the same action can
+be used for encoding and decoding.
+
+\paragraph*{Algorithm}
+\begin{description}
+\item [{Encryption}] : $C \equiv E(k,P) \equiv (P+k) \bmod 13$
+\item [{Decryption}] : $P \equiv D(k,C) \equiv (C-k) \bmod 13$
+\end{description}
+
+\paragraph*{Security Value}
+
+ROT13 cipher algorithm is considered as special case of Caesar Cipher.
+It is not a very secure algorithm and can be broken easily with frequency
+analysis or by just trying possible 25 keys whereas ROT13 can be broken
+by shifting 13 places. Therefore, it does not include any practical
+use. The algorithm provides virtually no cryptographic security, and
+is often cited as a canonical example of weak encryption.
+
+\subsubsection{ROT47}
+
+Rotation 47 (ROT47)\footnote{ROT47 though more secure than ROT13 is not secure enough. It is also
+widely used in basic cryptographic problems.} is a derivative of ROT13 which, in addition to scrambling the basic
+letters, treats numbers and common symbols. Instead of using the sequence
+A--Z as the alphabet, ROT47 uses a larger set of characters from
+the common character encoding known as ASCII. Specifically, the 7-bit
+printable characters, excluding space, from decimal 33 '!' through
+126 '\textasciitilde ', 94 in total, taken in the order of the numerical
+values of their ASCII codes, are rotated by 47 positions, without
+special consideration of case. For example, the character A is mapped
+to p, while a is mapped to 2. The use of a larger alphabet produces
+a more thorough obfuscation than that of ROT13. On the other hand,
+because ROT47 introduces numbers and symbols into the mix without
+discrimination, it is more immediately obvious that the text has been
+enciphered.
+
+\paragraph*{Security Value}
+
+Though far stronger than ROT13. It is still a type of shift cipher
+and hence can be deciphered using frequency analysis and exhaustive
+key search.
+
+\vfill{}
+
+
+\subsection{Cryptanalysis of Mono-Alphabetic Substitution Cipher:}
+
+\subsubsection{Frequency Analysis}
+
+In cryptography, frequency analysis is the study of the frequency
+of letters or groups of letters in a ciphertext. The method is used
+as an aid to breaking substitution ciphers. Example : Mono-Alphabetic
+Substitution Cipher, Caesar Cipher, Rotation/Shift Cipher etc. Frequency
+analysis consists of counting the occurrence of each letter in a text.
+Frequency analysis is based on the fact that, in any given piece of
+text, certain letters and combinations of letters occur with varying
+frequencies. For instance, given a section of English language, letters
+E, T, A and O are the most common, while letters Z, Q and X are not
+as frequently used.
+
+\medskip{}
+
+\begin{center}
+The following chart shows the frequency of each letter of the alphabet
+for the English language:
+\par\end{center}
+
+\begin{center}
+\includegraphics{ENG_FREQ}
+\par\end{center}
+
+\medskip{}
+
+We can assume that most samples of text written in English would have
+a similar distribution of letters. However this is only true if the
+sample of text is long enough. A very short text may lead to a significantly
+different distribution.
+
+When trying to decrypt a cipher text based on a substitution cipher,
+we can use a frequency analysis to help identify the most recurring
+letters in a cipher text and hence make hypothesis of what these letters
+have been encoded as (e.g. E, T, A, O, etc.) This will help us decrypt
+some of the letters in the text. We can then recognise patterns/words
+in the partly decoded text to identify more substitutions.
+
+\subsubsection{Brute Force/Exhaustive Key Search}
+
+In cryptography, a brute-force attack consists of an attacker submitting
+many passwords or passphrases with the hope of eventually guessing
+a combination correctly. The attacker systematically checks all possible
+passwords and passphrases until the correct one is found. Alternatively,
+the attacker can attempt to guess the key which is typically created
+from the password using a key derivation function. This is known as
+an exhaustive key search.
+
+A brute-force attack is a cryptanalytic attack that can, in theory,
+be used to attempt to decrypt any encrypted data (except for data
+encrypted in an information-theoretically secure manner). Such an
+attack might be used when it is not possible to take advantage of
+other weaknesses in an encryption system (if any exist) that would
+make the task easier
+
+\pagebreak{}
+
+\subsection{Simple Substitution Cipher}
+
+It is an improvement to the Caesar Cipher. Instead of shifting the
+alphabets by some number, this scheme uses some permutation of the
+letters in alphabet. For example, A, B, $\ldots\:$, Y, Z and Z, Y,
+$\ldots\:$, A are two obvious permutation of all the letters in alphabet.
+Permutation is nothing but a jumbled up set of alphabets. With 26
+letters in alphabet, the possible permutations are 26! (factorial
+of 26) which is equal to $4\times10^{26}$. The sender and the receiver
+may choose any one of these possible permutation as a ciphertext alphabet.
+This permutation is the secret key of the scheme.
+
+\paragraph{Process of Simple Substitution Cipher}
+\begin{itemize}
+\item Take the alphabets A, B, C,$\ldots\:$, Z in the natural order.
+\item The sender and the receiver decide on a randomly selected permutation
+of the letters of the alphabet.
+\item Underneath the natural order alphabets, write out the chosen permutation
+of the letters of the alphabet. For encryption, sender replaces each
+plaintext letters by substituting the permutation letter that is directly
+beneath it in the table. This process is shown in the following illustration.
+In this example, the chosen permutation is given below. The plaintext
+\textbf{\textquoteleft EXAMPLE\textquoteright{}} is encrypted to \textbf{\textquoteleft TBQDHST\textquoteright }.
+\end{itemize}
+\begin{center}
+{\footnotesize{}}%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
+\hline 
+\hline 
+{\footnotesize{}$C_t$} & {\footnotesize{}Q} & {\footnotesize{}W} & {\footnotesize{}E} & {\footnotesize{}R} & {\footnotesize{}T} & {\footnotesize{}Y} & {\footnotesize{}U} & {\footnotesize{}I} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}A} & {\footnotesize{}S} & {\footnotesize{}D} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}Z} & {\footnotesize{}X} & {\footnotesize{}C} & {\footnotesize{}V} & {\footnotesize{}B} & {\footnotesize{}N} & {\footnotesize{}M}\tabularnewline
+\hline 
+\end{tabular}{\footnotesize\par}
+\par\end{center}
+\begin{itemize}
+\item On receiving the ciphertext, the receiver, who also knows the randomly
+chosen permutation, replaces each ciphertext letter on the bottom
+row with the corresponding plaintext letter in the top row. The ciphertext
+\textbf{\textquoteleft TBQDHST\textquoteright{}} is decrypted to \textbf{\textquoteleft EXAMPLE\textquoteright }.
+\end{itemize}
+
 \end{document}
