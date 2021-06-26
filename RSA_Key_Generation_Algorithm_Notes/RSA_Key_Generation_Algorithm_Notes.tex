@@ -6,57 +6,79 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \setcounter{tocdepth}{2}
-\usepackage{calc}
+\usepackage{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{setspace}
 \usepackage{microtype}
 \onehalfspacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
+ {hyperref}
 \makeatletter
+\let\SF@@footnote\footnote
+\def\footnote{\ifx\protect\@typeset@protect
+    \expandafter\SF@@footnote
+  \else
+    \expandafter\SF@gobble@opt
+  \fi
+}
+\expandafter\def\csname SF@gobble@opt \endcsname{\@ifnextchar[%]
+  \SF@gobble@twobracket
+  \@gobble
+}
+\edef\SF@gobble@opt{\noexpand\protect
+  \expandafter\noexpand\csname SF@gobble@opt \endcsname}
+\def\SF@gobble@twobracket[#1]#2{}
+
 \@ifundefined{date}{}{\date{}}
 \author{}
 \usepackage{iftex}
 \usepackage {fancybox}
+
 \AtBeginDocument{
   \def\labelitemi{\(\star\)}
 }
 
 \makeatother
-\usepackage{babel}
+
 \begin{document}
-\title{\textbf{\Huge{}RSA ALGORITHM}}
+\title{\textbf{\huge{}RSA KEY GENERATION ALGORITHM}}
+\author{AGNI DATTA}
 \maketitle
 \begin{center}
 \rule[0.5ex]{0.5\columnwidth}{0.75pt}
 \par\end{center}
-\begin{center}
-\textbf{\LARGE{}Key Generation}{\LARGE\par}
-\par\end{center}
-\medskip{}
-\noindent\fbox{\begin{minipage}[t]{1\columnwidth - 2\fboxsep - 2\fboxrule}
+
+\vfill{}
+
 
 \subsection{Select two huge primes numbers,}
 
-$ p \: \text{and} \: q $
+\quad{}\quad{}\quad{}\quad{}$ p \: \text{and} \: q $
 
 \subsection{Calculate,}
 
-$ n = p \times q $
+\quad{}\quad{}\quad{}\quad{}$ n = p \times q $
 
-\subsection{Calculate Euler's Totient Function,}
+\subsection{Calculate Euler's Totient\protect\footnote{refer https://en.wikipedia.org/wiki/Euler\%27s\_totient\_function}
+Function,}
 
-$ \varphi (n) = (p-1) \times (q-1) $
+\quad{}\quad{}\quad{}\quad{}$ \varphi (n) = (p-1) \times (q-1) $
 
 \subsection{Choose the value of e such that,}
 
-$ d \equiv e^{-1} \bmod \varphi(n) \rightarrow ed \bmod \varphi(n) = 1 $
+\quad{}\quad{}\quad{}\quad{}$ d \equiv e^{-1} \bmod \varphi(n) \rightarrow ed \bmod \varphi(n) = 1 $
 
-\subsection{Public Key,}
+\subsection{Public Key Pair,}
 
-$ \{e,n\} $
+\quad{}\quad{}\quad{}\quad{}$ \{e,n\} $
 
-\subsection{Private Key,}
+\subsection{Private Key Pair,}
 
-$ \{d,n\} $%
-\end{minipage}}
+\quad{}\quad{}\quad{}\quad{}$ \{d,n\} $\\
+
+\vfill{}
+
 \end{document}
