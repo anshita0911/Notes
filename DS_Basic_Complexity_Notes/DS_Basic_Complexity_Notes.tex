@@ -1,11 +1,10 @@
 \documentclass{article}
-\usepackage{fontspec}
-\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{luainputenc}
+\usepackage[landscape,a4paper]{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \usepackage{microtype}
-
 \makeatletter
-
 \providecommand{\tabularnewline}{\\}
 
 \AtBeginDocument{
@@ -23,7 +22,7 @@
 
 \begin{center}
 {\small{}}%
-\begin{tabular}{|l|l|}
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Notes}\tabularnewline
 \hline 
@@ -44,7 +43,7 @@ ones.}\tabularnewline
 \textbf{\small{}Queue} & {\small{}Should not be selected for performance reasons, but algorithmic
 ones.}\tabularnewline
 \hline 
-\end{tabular}{\small\par}
+\end{tabular*}{\small\par}
 \par\end{center}
 
 \begin{center}
@@ -54,7 +53,7 @@ ones.}\tabularnewline
 
 \begin{center}
 {\small{}}%
-\begin{tabular}{|l|c|c|c|}
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|l|l|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Add to end} & \textbf{\small{}Insert at middle} & \textbf{\small{}Search for specific element}\tabularnewline
 \hline 
@@ -71,7 +70,7 @@ ones.}\tabularnewline
 \hline 
 \textbf{\small{}Queue} & {\small{}best case $\Theta(1)$; worst case $\Theta(n)$} & {\small{}N/A } & {\small{}N/A }\tabularnewline
 \hline 
-\end{tabular}{\small\par}
+\end{tabular*}{\small\par}
 \par\end{center}
 
 \begin{center}
@@ -81,7 +80,7 @@ ones.}\tabularnewline
 
 \begin{center}
 {\small{}}%
-\begin{tabular}{|l|c|c|c|c|}
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|l|l|l|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Random Access} & \textbf{\small{}In-order Access} & \textbf{\small{}Remove from end} & \textbf{\small{}Remove from middle}\tabularnewline
 \hline 
@@ -98,6 +97,9 @@ ones.}\tabularnewline
 \hline 
 \textbf{\small{}Queue} & {\small{}$\Theta(n)$} & {\small{}N/A } & {\small{}$\Theta(1)$} & {\small{}N/A}\tabularnewline
 \hline 
-\end{tabular}{\small\par}
+\end{tabular*}{\small\par}
 \par\end{center}
+
+\vfill{}
+
 \end{document}
