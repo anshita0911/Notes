@@ -1,10 +1,7 @@
-\documentclass[12pt,british]{article}
+\documentclass[11pt,a4paper,british]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
-\usepackage[a4paper]{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
+\usepackage[utf8]{luainputenc}
+\pagestyle{plain}
 \setcounter{tocdepth}{2}
 \usepackage{babel}
 \usepackage{amsmath}
@@ -13,10 +10,14 @@
 \usepackage{microtype}
 \onehalfspacing
 \usepackage[unicode=true,pdfusetitle,
- bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
  {hyperref}
 \makeatletter
+\@ifundefined{pageheight}{\let\pageheight\pdfpageheight}{}
+\@ifundefined{pagewidth}{\let\pagewidth\pdfpagewidth}{}
+\pageheight\paperheight
+\pagewidth\paperwidth
 \let\SF@@footnote\footnote
 \def\footnote{\ifx\protect\@typeset@protect
     \expandafter\SF@@footnote
@@ -31,12 +32,7 @@
 \edef\SF@gobble@opt{\noexpand\protect
   \expandafter\noexpand\csname SF@gobble@opt \endcsname}
 \def\SF@gobble@twobracket[#1]#2{}
-
 \@ifundefined{date}{}{\date{}}
-\author{}
-\usepackage{iftex}
-\usepackage {fancybox}
-
 \AtBeginDocument{
   \def\labelitemi{\(\star\)}
 }
@@ -48,36 +44,36 @@
 \author{AGNI DATTA}
 \maketitle
 \begin{center}
-\rule[0.5ex]{0.5\columnwidth}{0.75pt}
+\rule[0.5ex]{0.5\columnwidth}{0.75pt} 
 \par\end{center}
 
-\vfill{}
+\medskip{}
 
 
 \subsection{Select two huge primes numbers,}
 
-\quad{}\quad{}\quad{}\quad{}$ p \: \text{and} \: q $
+\quad{}\quad{}\quad{}\quad{}$p\:\text{and}\:q$
 
 \subsection{Calculate,}
 
-\quad{}\quad{}\quad{}\quad{}$ n = p \times q $
+\quad{}\quad{}\quad{}\quad{}$n=p\times q$
 
 \subsection{Calculate Euler's Totient\protect\footnote{refer https://en.wikipedia.org/wiki/Euler\%27s\_totient\_function}
 Function,}
 
-\quad{}\quad{}\quad{}\quad{}$ \varphi (n) = (p-1) \times (q-1) $
+\quad{}\quad{}\quad{}\quad{}$\varphi(n)=(p-1)\times(q-1)$
 
 \subsection{Choose the value of e such that,}
 
-\quad{}\quad{}\quad{}\quad{}$ d \equiv e^{-1} \bmod \varphi(n) \rightarrow ed \bmod \varphi(n) = 1 $
+\quad{}\quad{}\quad{}\quad{}$d\equiv e^{-1}\bmod\varphi(n)\rightarrow ed\bmod\varphi(n)=1$
 
 \subsection{Public Key Pair,}
 
-\quad{}\quad{}\quad{}\quad{}$ \{e,n\} $
+\quad{}\quad{}\quad{}\quad{}$\{e,n\}$
 
 \subsection{Private Key Pair,}
 
-\quad{}\quad{}\quad{}\quad{}$ \{d,n\} $\\
+\quad{}\quad{}\quad{}\quad{}$\{d,n\}$\\
 
 \vfill{}
 
