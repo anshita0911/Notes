@@ -1,20 +1,25 @@
-\documentclass[11pt,british]{article}
+\documentclass[british]{article}
 \usepackage{fontspec}
 \setmonofont{JetBrains Mono}
-\usepackage{geometry}
+\usepackage[a4paper]{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
-\pagestyle{plain}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{setspace}
 \usepackage{microtype}
-\doublespacing
-\usepackage[unicode=true,
- bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=false]
+\onehalfspacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
  {hyperref}
-
 \makeatletter
+\providecommand\textquotedblplain{%
+  \bgroup\addfontfeatures{RawFeature=-tlig}\char34\egroup}
+\fancyhead[RO]{\textsl{TABLE OF CONTENTS}}
+\fancyhead{}
+\fancyhead[RE,LO]{\leftmark}
 \AtBeginDocument{
-  \def\labelitemi{\Large\(\bullet\)}
+  \def\labelitemi{\(\star\)}
 }
 
 \makeatother
@@ -30,26 +35,26 @@
 
 \pagebreak{}
 
-\section{MARKDOWN:}
+\section{Markdown:}
 \begin{itemize}
-\item Lightweight Markup language with a plain text formatting syntax.
-\item No tags.
-\item Can be easily converted into HTML/XHTML/\LaTeX\: and other formats.
-\item It is extremely readable, understandable and easily edited.
-\item WYSISYG type format with a few formatting options.
-\item Highly portable.
+\item Lightweight Markup language with a plain text formatting syntax. 
+\item No tags. 
+\item Can be easily converted into HTML/XHTML/\LaTeX\: and other formats. 
+\item It is extremely readable, understandable and easily edited. 
+\item WYSISYG type format with a few formatting options. 
+\item Highly portable. 
 \end{itemize}
 
-\section{USES OF MARKDOWN:}
+\section{Uses of Markdown:}
 \begin{itemize}
-\item Technical Documentation.
-\item Posts in websites.
-\item Used in static sites generators.
+\item Technical Documentation. 
+\item Posts in websites. 
+\item Used in static sites generators. 
 \end{itemize}
 
-\section{BASIC FORMATTING:}
+\section{Basic Formatting:}
 
-\subsection{HEADINGS:}
+\subsection{Headings:}
 \begin{verbatim}
 >> # - HEADING 1
 >> ## - HEADING 2
@@ -58,52 +63,52 @@
 >> #####.....N - HEADING N
 \end{verbatim}
 
-\subsection{ITALICS:}
+\subsection{Italics:}
 \begin{verbatim}
 >> *TEXT INSIDE WILL BE ITALICS*
 >> _TEXT INSIDE WILL BE ITALICS_
 \end{verbatim}
 
-\subsection{STRONG TEXT:}
+\subsection{Strong Text:}
 \begin{verbatim}
 >> **TEXT INSIDE WILL BE STRONG**
 >> __TEXT INSIDE WILL BE STRONG__
 \end{verbatim}
 
-\subsection{STRIKE-TROUGH TEXT:}
+\subsection{Strike-trough Text:}
 \begin{verbatim}
 >> ~~TEXT INSIDE WILL BE STROKED OUT~~
 \end{verbatim}
 
-\subsection{HORIZONTAL RULE:}
+\subsection{Horizontal Rule:}
 \begin{verbatim}
 >> - - -
 >> ____
 \end{verbatim}
 
-\subsection{ESCAPE SEQUENCE FOR SPECIAL CHARACTER:}
+\subsection{Escape Sequence for Special Character:}
 \begin{verbatim}
 >> /SPECIAL SEQUENCE/
 \end{verbatim}
 
-\subsection{BLOCK QUOTE TEXT:}
+\subsection{Block Quote Text:}
 \begin{verbatim}
 >> >THIS IS A QUOTE
 \end{verbatim}
 
-\subsection{LINK TEXT:}
+\subsection{Link Text:}
 \begin{verbatim}
 >> [NAME OF THE LINK]{ACTUAL LINK"TITLE OF THE LINK"}
 \end{verbatim}
 
-\subsection{UNORDERED LIST:}
+\subsection{Unordered List:}
 \begin{verbatim}
 >>  * POINT 1
 	* POINT 2
 			* NESTED POINT 1
 \end{verbatim}
 
-\subsection{ORDERED LIST:}
+\subsection{Ordered List:}
 \begin{verbatim}
 >> 1. ITEM 1
 >> 2. ITEM 2
@@ -111,17 +116,17 @@
 >> 4. ITEM 4
 \end{verbatim}
 
-\subsection{INLINE CODE BLOCK:}
+\subsection{Inline Code Block:}
 \begin{verbatim}
 >> '<p> THIS IS A PARAGRAPH <p>'
 \end{verbatim}
 
-\subsection{IMAGE:}
+\subsection{Image:}
 \begin{verbatim}
 >> ![IMAGE NAME] (LOCATION OF THE IMAGE)
 \end{verbatim}
 
-\subsection{CODE BLOCKS:}
+\subsection{Code Blocks:}
 \begin{verbatim}
 >> ''' (LANGUAGE SYNTAX)
 	CODE 
@@ -129,7 +134,7 @@
 	'''
 \end{verbatim}
 
-\subsection{TABLES:}
+\subsection{Tables:}
 \begin{verbatim}
 >>  | COLUMN 1 | COLUMN 2 |
 >>  | -------- | -------- |
@@ -137,7 +142,7 @@
 >>  | DATA     | DATA     |
 \end{verbatim}
 
-\subsection{TASK LISTS:}
+\subsection{Task Lists:}
 \begin{verbatim}
 >> * [x] TASK 1
 >> * [x] TASK 2
