@@ -1,12 +1,21 @@
-\documentclass{article}
+\documentclass[12pt,american]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
-\usepackage[landscape,a4paper]{geometry}
+\usepackage[utf8]{luainputenc}
+\usepackage[a4paper]{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\pagestyle{plain}
+\usepackage{babel}
+\usepackage{setspace}
 \usepackage{microtype}
+\onehalfspacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=page,colorlinks=false]
+ {hyperref}
 \makeatletter
 \providecommand{\tabularnewline}{\\}
-
+\@ifundefined{date}{}{\date{}}
+\providecommand{\tabularnewline}{\\}
 \AtBeginDocument{
   \def\labelitemi{\(\star\)}
 }
@@ -18,11 +27,10 @@
 \author{AGNI DATTA}
 
 \maketitle
-\medskip{}
+\vfill{}
 
 \begin{center}
-{\small{}}%
-\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|}
+\begin{tabular}{|c|l|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Notes}\tabularnewline
 \hline 
@@ -43,17 +51,16 @@ ones.}\tabularnewline
 \textbf{\small{}Queue} & {\small{}Should not be selected for performance reasons, but algorithmic
 ones.}\tabularnewline
 \hline 
-\end{tabular*}{\small\par}
+\end{tabular}
 \par\end{center}
 
 \begin{center}
-{\small{}\medskip{}
+{\small{}\smallskip{}
 }{\small\par}
 \par\end{center}
 
 \begin{center}
-{\small{}}%
-\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|l|l|}
+\begin{tabular}{|c|c|c|c|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Add to end} & \textbf{\small{}Insert at middle} & \textbf{\small{}Search for specific element}\tabularnewline
 \hline 
@@ -66,21 +73,20 @@ ones.}\tabularnewline
 \hline 
 \textbf{\small{}Linked List} & {\small{}$\Theta(1)$} & {\small{}$\Theta(1)$} & {\small{}$\Theta(n)$}\tabularnewline
 \hline 
-\textbf{\small{}Stack} & {\small{}best case $\Theta(1)$; worst case $\Theta(n)$} & {\small{}N/A } & {\small{}N/A }\tabularnewline
+\textbf{\small{}Stack} & {\small{}best case $\Theta(1)$; worst case $\Theta(n)$} & {\small{}N/A} & {\small{}N/A}\tabularnewline
 \hline 
-\textbf{\small{}Queue} & {\small{}best case $\Theta(1)$; worst case $\Theta(n)$} & {\small{}N/A } & {\small{}N/A }\tabularnewline
+\textbf{\small{}Queue} & {\small{}best case $\Theta(1)$; worst case $\Theta(n)$} & {\small{}N/A} & {\small{}N/A}\tabularnewline
 \hline 
-\end{tabular*}{\small\par}
+\end{tabular}
 \par\end{center}
 
 \begin{center}
-{\small{}\medskip{}
+{\small{}\smallskip{}
 }{\small\par}
 \par\end{center}
 
 \begin{center}
-{\small{}}%
-\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|l|l|l|l|l|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline 
 \textbf{\small{}Type} & \textbf{\small{}Random Access} & \textbf{\small{}In-order Access} & \textbf{\small{}Remove from end} & \textbf{\small{}Remove from middle}\tabularnewline
 \hline 
@@ -93,13 +99,14 @@ ones.}\tabularnewline
 \hline 
 \textbf{\small{}Linked List} & {\small{}$\Theta(n)$} & {\small{}$\Theta(1)$} & {\small{}$\Theta(1)$} & {\small{}$\Theta(1)$}\tabularnewline
 \hline 
-\textbf{\small{}Stack} & {\small{}$\Theta(n)$} & {\small{}N/A } & {\small{}$\Theta(1)$} & {\small{}N/A}\tabularnewline
+\textbf{\small{}Stack} & {\small{}$\Theta(n)$} & {\small{}N/A}  & {\small{}$\Theta(1)$} & {\small{}N/A}\tabularnewline
 \hline 
 \textbf{\small{}Queue} & {\small{}$\Theta(n)$} & {\small{}N/A } & {\small{}$\Theta(1)$} & {\small{}N/A}\tabularnewline
 \hline 
-\end{tabular*}{\small\par}
+\end{tabular}
 \par\end{center}
 
+\begin{center}
 \vfill{}
-
+\par\end{center}
 \end{document}
