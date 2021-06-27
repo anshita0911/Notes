@@ -1,11 +1,12 @@
 \documentclass[british]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
 \usepackage{babel}
 \usepackage{array}
 \usepackage{textcomp}
@@ -19,18 +20,27 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=section,colorlinks=false]
  {hyperref}
+\hypersetup{
+ pdfborderstyle=}
 \makeatletter
 \providecommand{\tabularnewline}{\\}
+\usepackage{paralist}
 \@ifundefined{date}{}{\date{}}
-\makeatletter
+\usepackage{fancyhdr}
+\usepackage{babel}
+\usepackage{array}
+\providecommand{\tabularnewline}{\\}
 \@addtoreset{section}{part}
-\makeatother
 \usepackage[nobottomtitles*]{titlesec}
 \fancyhead[RO]{\textsl{TABLE OF CONTENTS}}
 \fancyhead{}
 \fancyhead[RE,LO]{\leftmark}
 \AtBeginDocument{
   \def\labelitemi{\large\(\star\)}
+}
+
+\AtBeginDocument{
+  \def\labelitemi{\(\star\)}
 }
 
 \makeatother
@@ -40,15 +50,15 @@
 \author{AGNI DATTA}
 \maketitle
 \begin{center}
-\rule[0.5ex]{0.5\columnwidth}{0.75pt}
+\rule[0.5ex]{0.5\columnwidth}{0.75pt} 
 \par\end{center}
 \begin{quotation}
 \begin{center}
 \textbf{`We can only see a short distance ahead, but we can see plenty
-there that needs to be done'}
+there that needs to be done'} 
 \par\end{center}
 \begin{center}
-Alan Turing
+Alan Turing 
 \par\end{center}
 
 \end{quotation}
@@ -65,6 +75,8 @@ surprise, then, that new forms of cryptography came soon after the
 widespread development of computer communications. In data and telecommunications,
 cryptography is necessary when communicating over any untrusted medium,
 which includes just about any network, particularly the Internet.}{\normalsize\par}
+
+ 
 \end{abstract}
 \pagebreak{}
 
@@ -76,7 +88,7 @@ which includes just about any network, particularly the Internet.}{\normalsize\p
 
 \section{Glossary}
 \begin{center}
-\rule[0.5ex]{450bp}{0.75pt}
+\rule[0.5ex]{450bp}{0.75pt} 
 \par\end{center}
 
 \subsection{Cryptography}
@@ -175,11 +187,11 @@ or compromised by anyone who has access to the communication channel.
 \subsection{Notation}
 
 \begin{tabular}{>{\raggedright}p{1.5cm}l}
-{\large{}$P$} & {\large{}plaintext}\tabularnewline
-{\large{}$C$} & {\large{}ciphertext}\tabularnewline
-{\large{}$E$} & {\large{}the encryption method}\tabularnewline
-{\large{}$D$} & {\large{}the decryption method}\tabularnewline
-{\large{}$k$} & {\large{}the key}\tabularnewline
+$P$  & plaintext\tabularnewline
+$C$  & ciphertext\tabularnewline
+$E$  & the encryption method\tabularnewline
+$D$  & the decryption method\tabularnewline
+$k$  & the key\tabularnewline
 \end{tabular}
 
 \vfill{}
@@ -188,7 +200,7 @@ or compromised by anyone who has access to the communication channel.
 
 \section{Introduction To Cryptography and Related Topics}
 \begin{center}
-\rule[0.5ex]{450bp}{0.75pt}
+\rule[0.5ex]{450bp}{0.75pt} 
 \par\end{center}
 
 \subsection{Cryptography}
@@ -211,13 +223,13 @@ functions of cryptography:
 \begin{center}
 \begin{tabular}{|l||l|}
 \hline 
-\textbf{\small{}Privacy/Confidentiality} & {\small{}Ensuring that no one can read the message except the intended
+\textbf{\small{}Privacy/Confidentiality}{\small{} } & {\small{}Ensuring that no one can read the message except the intended
 receiver.}\tabularnewline
-\textbf{\small{}Authentication} & {\small{}The process of proving one's identity.}\tabularnewline
-\textbf{\small{}Integrity} & {\small{}Assuring the receiver that the received message has not been
+\textbf{\small{}Authentication}{\small{} } & {\small{}The process of proving one's identity.}\tabularnewline
+\textbf{\small{}Integrity}{\small{} } & {\small{}Assuring the receiver that the received message has not been
 altered in any way.}\tabularnewline
-\textbf{\small{}Non-repudiation} & {\small{}A mechanism to prove that the sender really.}\tabularnewline
-\textbf{\small{}Key exchange} & {\small{}The method by which crypto keys are shared between sender
+\textbf{\small{}Non-repudiation}{\small{} } & {\small{}A mechanism to prove that the sender really.}\tabularnewline
+\textbf{\small{}Key exchange}{\small{} } & {\small{}The method by which crypto keys are shared between sender
 and receiver.}\tabularnewline
 \hline 
 \end{tabular}
@@ -230,32 +242,32 @@ and receiver.}\tabularnewline
 
 The primary objective of using cryptography is to provide the following
 four fundamental information security services. Let us now see the
-possible goals intended to be fulfilled by cryptography.
+possible goals intended to be fulfilled by cryptography. 
 \begin{enumerate}
 \item \textbf{Confidentiality : }Confidentiality is the fundamental security
 service provided by cryptography. It is a security service that keeps
 the information from an unauthorized person. It is sometimes referred
 to as privacy or secrecy. Confidentiality can be achieved through
 numerous means starting from physical securing to the use of mathematical
-algorithms for data encryption.
+algorithms for data encryption. 
 \item \textbf{Data Integrity :} It is security service that deals with identifying
 any alteration to the data. The data may get modified by an unauthorized
 entity intentionally or accidentally. Integrity service confirms that
 whether data is intact or not since it was last created, transmitted,
 or stored by an authorized user. Data integrity cannot prevent the
 alteration of data, but provides a means for detecting whether data
-has been manipulated in an unauthorized manner.
+has been manipulated in an unauthorized manner. 
 \item \textbf{Authentication : }Authentication provides the identification
 of the originator. It confirms to the receiver that the data received
 has been sent only by an identified and verified sender. Apart from
 the originator, authentication may also provide assurance about other
 parameters related to data such as the date and time of creation/transmission.
-Authentication service has two variants \textminus{}
+Authentication service has two variants \textminus{} 
 \begin{enumerate}
 \item \textbf{Message authentication} identifies the originator of the message
-without any regard router or system that has sent the message.
+without any regard router or system that has sent the message. 
 \item \textbf{Entity authentication} is assurance that data has been received
-from a specific entity, say a particular website.
+from a specific entity, say a particular website. 
 \end{enumerate}
 \item \textbf{Non-repudiation : }It is a security service that ensures that
 an entity cannot refuse the ownership of a previous commitment or
@@ -265,7 +277,7 @@ or third party. Non-repudiation is a property that is most desirable
 in situations where there are chances of a dispute over the exchange
 of data. For example, once an order is placed electronically, a purchaser
 cannot deny the purchase order, if non-repudiation service was enabled
-in this transaction.
+in this transaction. 
 \end{enumerate}
 In cryptography, we start with the unencrypted data, referred to as
 plaintext. Plaintext is encrypted into ciphertext, which will in turn
@@ -274,8 +286,12 @@ and decryption is based upon the type of cryptography scheme being
 employed and some form of key. For those who like formulas, this process
 is sometimes written as:
 
-$$ C = E_k(P) $$
-$$ P = D_k(C) $$
+\[
+C=E_{k}(P)
+\]
+\[
+P=D_{k}(C)
+\]
 
 where, 
 \begin{verse}
@@ -287,10 +303,10 @@ $E$ = the encryption method,
 
 $D$ = the decryption method,
 
-$k$ = the key.
+$k$ = the key. 
 \end{verse}
 Given this, there are other functions that might be supported by crypto
-and other terms that one might hear:
+and other terms that one might hear: 
 \begin{itemize}
 \item \textbf{Forward Secrecy (aka Perfect Forward Secrecy):} This feature
 protects past encrypted sessions from compromise even if the server
@@ -301,11 +317,11 @@ does not threaten the entirely of the communications.
 the ciphertext conveys no information about the plaintext or the key.
 To achieve perfect security, the key has to be at least as long as
 the plaintext, making analysis and even brute-force attacks impossible.
-One-time pads are an example of such a system.
+One-time pads are an example of such a system. 
 \item \textbf{Deniable Authentication (aka Message Repudiation): }A method
 whereby participants in an exchange of messages can be assured in
 the authenticity of the messages but in such a way that senders can
-later plausibly deny their participation to a third-party.
+later plausibly deny their participation to a third-party. 
 \end{itemize}
 In many of the descriptions below, two communicating parties will
 be referred to as Alice and Bob; this is the common nomenclature in
@@ -334,7 +350,7 @@ as well. The roots of cryptography are found in Roman and Egyptian
 civilizations.
 
 Hieroglyph \textminus{} The Oldest Cryptographic Technique- The first
-known evidence of cryptography can be traced to the use of \textquoteleft \textit{hieroglyph}\textquoteright .
+known evidence of cryptography can be traced to the use of `\textit{hieroglyph}'.
 Some 4000 years ago, the Egyptians used to communicate by messages
 written in hieroglyph. This code was the secret known only to the
 scribes who used to transmit messages on behalf of the kings.
@@ -355,20 +371,20 @@ original message.
 It is during and after the European Renaissance, various Italian and
 Papal states led the rapid proliferation of cryptographic techniques.
 Various analysis and attack techniques were researched in this era
-to break the secret codes.
+to break the secret codes. 
 \begin{itemize}
 \item Improved coding techniques such as Vigenere Coding came into existence
 in the 15th century, which offered moving letters in the message with
 a number of variable places instead of moving them the same number
-of places.
+of places. 
 \item Only after the 19th century, cryptography evolved from the ad hoc
 approaches to encryption to the more sophisticated art and science
-of information security.
+of information security. 
 \item In the early 20th century, the invention of mechanical and electromechanical
 machines, such as the Enigma rotor machine, provided more advanced
-and efficient means of coding the information.
+and efficient means of coding the information. 
 \item During the period of World War II, both cryptography and cryptanalysis
-became excessively mathematical.
+became excessively mathematical. 
 \end{itemize}
 With the advances taking place in this field, government organizations,
 military units, and some corporate houses started adopting the applications
@@ -387,21 +403,21 @@ theory.
 \begin{center}
 \begin{tabular}{|m{0.38\paperwidth}|>{\raggedright}m{0.4\paperwidth}|}
 \hline 
-\textbf{Classic Cryptography} & \textbf{Modern Cryptography}\tabularnewline
+\textbf{Classic Cryptography}  & \textbf{Modern Cryptography}\tabularnewline
 \hline 
 \hline 
-It manipulates traditional characters, i.e., letters and digits directly. & It operates on binary bit sequences.\tabularnewline
+It manipulates traditional characters, i.e., letters and digits directly.  & It operates on binary bit sequences.\tabularnewline
 \hline 
-It is mainly based on \textquoteleft security through obscurity\textquoteright .
-The techniques employed for coding were kept secret and only the parties
-involved in communication knew about them. & It relies on publicly known mathematical algorithms for coding the
+It is mainly based on `security through obscurity'. The techniques
+employed for coding were kept secret and only the parties involved
+in communication knew about them.  & It relies on publicly known mathematical algorithms for coding the
 information. Secrecy is obtained through a secrete key which is used
 as the seed for the algorithms. The computational difficulty of algorithms,
 absence of secret key, etc., make it impossible for an attacker to
 obtain the original information even if he knows the algorithm used
 for coding.\tabularnewline
 \hline 
-It requires the entire cryptosystem for communicating confidentially. & Modern cryptography requires parties interested in secure communication
+It requires the entire cryptosystem for communicating confidentially.  & Modern cryptography requires parties interested in secure communication
 to possess the secret key only.\tabularnewline
 \hline 
 \end{tabular}
@@ -412,12 +428,12 @@ to possess the secret key only.\tabularnewline
 Cryptography primitives\footnote{Cryptographic Primitives are intricately related and they are often
 combined to achieve a set of desired security services from a cryptosystem.} are nothing but the tools and techniques in Cryptography that can
 be selectively used to provide a set of desired security services
-\textminus{}
+\textminus{} 
 \begin{itemize}
-\item Encryption
-\item Hash functions
-\item Message Authentication codes (MAC)
-\item Digital Signatures
+\item Encryption 
+\item Hash functions 
+\item Message Authentication codes (MAC) 
+\item Digital Signatures 
 \end{itemize}
 The following table shows the primitives that can achieve a particular
 security service on their own.
@@ -427,16 +443,16 @@ security service on their own.
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|}
 \hline 
-Primitives Service & Encryption & Hash functions & Message Authentication codes (MAC) & Digital Signatures\tabularnewline
+Primitives Service  & Encryption  & Hash functions  & Message Authentication codes (MAC)  & Digital Signatures\tabularnewline
 \hline 
 \hline 
-Confidentiality & Yes & No & No & No\tabularnewline
+Confidentiality  & Yes  & No  & No  & No\tabularnewline
 \hline 
-Integrity & No & Sometimes & Yes & Yes\tabularnewline
+Integrity  & No  & Sometimes  & Yes  & Yes\tabularnewline
 \hline 
-Authentication & No & No & Yes & Yes\tabularnewline
+Authentication  & No  & No  & Yes  & Yes\tabularnewline
 \hline 
-Non Reputation & No & No & Sometimes & Yes\tabularnewline
+Non Reputation  & No  & No  & Sometimes  & Yes\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
@@ -454,9 +470,6 @@ addition to mathematical analysis of cryptographic algorithms, cryptanalysis
 includes the study of side-channel attacks that do not target weaknesses
 in the cryptographic algorithms themselves, but instead exploit weaknesses
 in their implementation.
-
-\vfill{}
-
 
 \subsection{Cryptosystem}
 
@@ -503,7 +516,7 @@ for it is unlikely to notice the change.
 
 \section{Types of Cryptography}
 \begin{center}
-\rule[0.5ex]{450bp}{0.75pt}
+\rule[0.5ex]{450bp}{0.75pt} 
 \par\end{center}
 
 \subsection{Private-Key Cryptography}
@@ -516,25 +529,27 @@ in practice, represent a shared secret between two or more parties
 that can be used to maintain a private information link. The requirement
 that both parties have access to the secret key is one of the main
 drawbacks of symmetric-key encryption, in comparison to public-key
-encryption (also known as asymmetric-key encryption). 
+encryption (also known as asymmetric-key encryption).
 
-$$ P\xrightarrow{\:\textbf{private key}\:}C\xrightarrow{\:\textbf{private key}\:}P $$
+\[
+P\xrightarrow{\:\textbf{private key}\:}C\xrightarrow{\:\textbf{private key}\:}P
+\]
 
 \medskip{}
 
 
 \subsubsection{Challenge of Private-Key Cryptosystem}
 
-There are two restrictive challenges of employing symmetric key cryptography.
+There are two restrictive challenges of employing symmetric key cryptography. 
 \begin{itemize}
 \item \textbf{Key establishment \textminus{}} Before any communication,
 both the sender and the receiver need to agree on a secret symmetric
-key. It requires a secure key establishment mechanism in place.
+key. It requires a secure key establishment mechanism in place. 
 \item \textbf{Trust Issue \textminus{}} Since the sender and the receiver
 use the same symmetric key, there is an implicit requirement that
-the sender and the receiver \textquoteleft trust\textquoteright{}
-each other. For example, it may happen that the receiver has lost
-the key to an attacker and the sender is not informed.
+the sender and the receiver `trust' each other. For example, it
+may happen that the receiver has lost the key to an attacker and the
+sender is not informed. 
 \end{itemize}
 These two challenges are highly restraining for modern day communication.
 Today, people need to exchange information with non-familiar and non-trusted
@@ -589,7 +604,9 @@ good symmetric encryption, too slow for many purposes. Today's cryptosystems
 (such as TLS, Secure Shell) use both symmetric encryption and asymmetric
 encryption.
 
-$$ P\xrightarrow{\:\textbf{public key}\:}C\xrightarrow{\:\textbf{private key}\:}P $$
+\[
+P\xrightarrow{\:\textbf{public key}\:}C\xrightarrow{\:\textbf{private key}\:}P
+\]
 
 \medskip{}
 
@@ -616,26 +633,26 @@ trusted third party.
 
 \subsubsection{Kerckhoff\textquoteright s Principle}
 
-Kerckhoff\textquoteright s Principle for Cryptosystem In the $19^{\text{th}}$
-century, a Dutch cryptographer Auguste Kerckhoff furnished the requirements
+Kerckhoff's Principle for Cryptosystem In the $19^{\text{th}}$ century,
+a Dutch cryptographer Auguste Kerckhoff furnished the requirements
 of a good cryptosystem. Kerckhoff stated that a cryptographic system
 should be secure even if everything about the system, except the key,
-is public knowledge. 
+is public knowledge.
 
 The six design principles defined by Kerckhoff for cryptosystem are
-\textminus{}
+\textminus{} 
 \begin{itemize}
-\item The cryptosystem should be unbreakable practically, if not mathematically.
+\item The cryptosystem should be unbreakable practically, if not mathematically. 
 \item Falling of the cryptosystem in the hands of an intruder should not
 lead to any compromise of the system, preventing any inconvenience
-to the user.
-\item The key should be easily communicable, memorable, and changeable.
-\item The ciphertext should be transmissible by telegraph, an unsecure channel.
+to the user. 
+\item The key should be easily communicable, memorable, and changeable. 
+\item The ciphertext should be transmissible by telegraph, an unsecure channel. 
 \item The encryption apparatus and documents should be portable and operable
-by a single person.
+by a single person. 
 \item Finally, it is necessary that the system be easy to use, requiring
 neither mental strain nor the knowledge of a long series of rules
-to observe.
+to observe. 
 \end{itemize}
 The second rule is currently known as Kerckhoff principle. It is applied
 in virtually all the contemporary encryption algorithms such as DES,
@@ -677,22 +694,25 @@ check digits, fingerprints, lossy compression, randomization functions,
 error-correcting codes, and ciphers. Although the concepts overlap
 to some extent, each one has its own uses and requirements and is
 designed and optimized differently. The hash functions differ from
-the concepts numbered mainly in terms of data integrity. 
+the concepts numbered mainly in terms of data integrity.
 
-$$ P\xrightarrow{\:\textbf{hash function}\:}C $$
+\[
+P\xrightarrow{\:\textbf{hash function}\:}C
+\]
+
 
 \subsection{Relation between Encryption Schemes}
 \begin{center}
 \begin{tabular}{|l||l|l|}
 \hline 
- & \textbf{Private-Key Cryptosystems} & \textbf{Public-Key Cryptosystems}\tabularnewline
+ & \textbf{Private-Key Cryptosystems}  & \textbf{Public-Key Cryptosystems}\tabularnewline
 \hline 
 \hline 
-\textbf{Relation between Keys} & Equal & Not Equal, but mathematically related\tabularnewline
+\textbf{Relation between Keys}  & Equal  & Not Equal, but mathematically related\tabularnewline
 \hline 
-\textbf{Encryption Key} & Private/Symmetric & Public/Asymmetric\tabularnewline
+\textbf{Encryption Key}  & Private/Symmetric  & Public/Asymmetric\tabularnewline
 \hline 
-\textbf{Decryption Key} & Private/Symmetric & Private/Asymmetric\tabularnewline
+\textbf{Decryption Key}  & Private/Symmetric  & Private/Asymmetric\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
@@ -720,14 +740,14 @@ may go unnoticed by the owner.
 An active attack involves changing the information in some way by
 conducting some process on the information.
 
-For example,
+For example, 
 \begin{itemize}
-\item Modifying the information in an unauthorized manner.
-\item Initiating unintended or unauthorized transmission of information.
+\item Modifying the information in an unauthorized manner. 
+\item Initiating unintended or unauthorized transmission of information. 
 \item Alteration of authentication data such as originator name or timestamp
-associated with information
-\item Unauthorized deletion of data.
-\item Denial of access to information for legitimate users (denial of service).
+associated with information 
+\item Unauthorized deletion of data. 
+\item Denial of access to information for legitimate users (denial of service). 
 \end{itemize}
 
 \subsection{Assumptions of Attacker}
@@ -738,21 +758,21 @@ by the types of attacks employed to break these systems \textminus{}
 \subsubsection{Environment around Cryptosystem}
 
 While considering possible attacks on the cryptosystem, it is necessary
-to know the cryptosystems environment. The attacker\textquoteright s
-assumptions and knowledge about the environment decides his capabilities.
+to know the cryptosystems environment. The attacker's assumptions
+and knowledge about the environment decides his capabilities.
 
 In cryptography, the following three assumptions are made about the
-security environment and attacker\textquoteright s capabilities.
+security environment and attacker's capabilities. 
 \begin{enumerate}
 \item \textbf{Details of the Encryption Scheme}
 
 The design of a cryptosystem is based on the following two cryptography
-algorithms \textminus{}
+algorithms \textminus{} 
 \begin{enumerate}
 \item \textbf{Public Algorithms \textminus{}} With this option, all the
-details of the algorithm are in the public domain, known to everyone.
+details of the algorithm are in the public domain, known to everyone. 
 \item \textbf{Proprietary algorithms \textminus{} }The details of the algorithm
-are only known by the system designers and users.
+are only known by the system designers and users. 
 \end{enumerate}
 In case of proprietary algorithms, security is ensured through obscurity.
 Private algorithms may not be the strongest algorithms as they are
@@ -761,43 +781,45 @@ developed in-house and may not be extensively investigated for weakness.
 \noindent Secondly, they allow communication among closed group only.
 Hence they are not suitable for modern communication where people
 communicate with large number of known or unknown entities. Also,
-according to Kerckhoff\textquoteright s principle, the algorithm is
-preferred to be public with strength of encryption lying in the key.
-Thus, the first assumption about security environment is that the
-encryption algorithm is known to the attacker.
+according to Kerckhoff's principle, the algorithm is preferred to
+be public with strength of encryption lying in the key. Thus, the
+first assumption about security environment is that the encryption
+algorithm is known to the attacker. 
 \item \textbf{Availability of Ciphertext}
 
 We know that once the plaintext is encrypted into ciphertext, it is
 put on unsecure public channel for transmission. Thus, the attacker
 can obviously assume that it has access to the ciphertext generated
-by the cryptosystem.
+by the cryptosystem. 
 \item \textbf{Availability of Plaintext and Ciphertext}
 
 This assumption is not as obvious as other. However, there may be
 situations where an attacker can have access to plaintext and corresponding
-ciphertext. Some such possible circumstances are \textminus{}
+ciphertext. Some such possible circumstances are \textminus{} 
 \begin{enumerate}
 \item The attacker influences the sender to convert plaintext of his choice
-and obtains the ciphertext.
+and obtains the ciphertext. 
 \item The receiver may divulge the plaintext to the attacker inadvertently.
 The attacker has access to corresponding ciphertext gathered from
-open channel.
+open channel. 
 \item In a public-key cryptosystem, the encryption key is in open domain
 and is known to any potential attacker. Using this key, he can generate
 pairs of corresponding plaintexts and ciphertexts.
 \end{enumerate}
 \end{enumerate}
+\vfill{}
+
+\pagebreak{}
 
 \subsection{Cryptographic Attacks}
 
 The basic intention of an attacker is to break a cryptosystem and
 to find the plaintext from the ciphertext. To obtain the plaintext,
 the attacker only needs to find out the secret decryption key, as
-the algorithm is already in public domain.
-
-Hence, he applies maximum effort towards finding out the secret key
-used in the cryptosystem. Once the attacker is able to determine the
-key, the attacked system is considered as broken or compromised.
+the algorithm is already in public domain. Hence, he applies maximum
+effort towards finding out the secret key used in the cryptosystem.
+Once the attacker is able to determine the key, the attacked system
+is considered as broken or compromised.
 
 Based on the methodology used, attacks on cryptosystems are categorized
 as follows \textminus{}
@@ -830,7 +852,7 @@ vulnerable to chosen-plaintext attacks.
 
 \subsubsection{Dictionary Attack}
 
-This attack has many variants, all of which involve compiling a \textquoteleft dictionary\textquoteright .
+This attack has many variants, all of which involve compiling a `dictionary'.
 In simplest method of this attack, attacker builds a dictionary of
 ciphertexts and corresponding plaintexts that he has learnt over a
 period of time. In future, when an attacker gets the ciphertext, he
@@ -840,7 +862,7 @@ refers the dictionary to find the corresponding plaintext.
 
 In this method, the attacker tries to determine the key by attempting
 all possible keys. If the key is 8 bits long, then the number of possible
-keys is $2^8 = 256$. The attacker knows the ciphertext and the algorithm,
+keys is $2^{8}=256$. The attacker knows the ciphertext and the algorithm,
 now he attempts all the 256 keys one by one for decryption. The time
 to complete the attack would be very high if the key is long.
 
@@ -851,7 +873,7 @@ the cryptographic hash function. When students in a class are asked
 about their birthdays, the answer is one of the possible 365 dates.
 Let us assume the first student's birthdate is $3^{\text{rd}}$ August.
 Then to find the next student whose birthdate is $3^{\text{rd}}$
-August, we need to enquire $\displaystyle 1.25 \times \sqrt{365} \approx 25$
+August, we need to enquire ${\displaystyle 1.25\times\sqrt{365}\approx25}$
 students. Similarly, if the hash function produces 64 bit hash values,
 the possible hash values are $1.8\times1019$. By repeatedly evaluating
 the function for different inputs, the same output is expected to
@@ -862,18 +884,17 @@ it is a collision and that hash function is said to be broken.
 \subsubsection{Man in Middle Attack (MIM)}
 
 The targets of this attack are mostly public key cryptosystems where
-key exchange is involved before communication takes place.
+key exchange is involved before communication takes place. 
 \begin{itemize}
 \item Host $\mathbb{A}$ wants to communicate to host $\mathbb{B}$, hence
 requests public key of $\mathbb{B}$.
 \item An attacker intercepts this request and sends his public key instead.
 \item Thus, whatever host $\mathbb{A}$ sends to host $\mathbb{B}$, the
-attacker is able to read.
+attacker is able to read. 
 \item In order to maintain communication, the attacker re-encrypts the data
-after reading with his public key and sends to $\mathbb{B}$.
-\item The attacker sends his public key as $\mathbb{A}$\textquoteright s
-public key so that $\mathbb{B}$ takes it as if it is taking it from
-$\mathbb{A}$.
+after reading with his public key and sends to $\mathbb{B}$. 
+\item The attacker sends his public key as $\mathbb{A}$'s public key so
+that $\mathbb{B}$ takes it as if it is taking it from $\mathbb{A}$.
 \end{itemize}
 
 \subsubsection{Side Channel Attack (SCA)}
@@ -919,22 +940,22 @@ improvement.
 
 \section{Symmetric Cryptosystems}
 \begin{center}
-\rule[0.5ex]{450bp}{0.75pt}
+\rule[0.5ex]{450bp}{0.75pt} 
 \par\end{center}
 
 \subsubsection{Ancient Cryptosystems}
 
 Before proceeding further, we shall discuss some facts about historical
-cryptosystems:
+cryptosystems: 
 \begin{itemize}
-\item All of these systems are based on symmetric key encryption scheme.
+\item All of these systems are based on symmetric key encryption scheme. 
 \item The only security service these systems provide is confidentiality
-of information.
+of information. 
 \item Unlike modern systems which are digital and treat data as binary numbers,
-the earlier systems worked on alphabets as basic element.
+the earlier systems worked on alphabets as basic element. 
 \item These earlier cryptographic systems are also referred to as Ciphers.
 In general, a cipher is simply just a set of steps (an algorithm)
-for performing both an encryption, and the corresponding decryption.
+for performing both an encryption, and the corresponding decryption. 
 \end{itemize}
 
 \subsection{Shift Ciphers}
@@ -946,66 +967,69 @@ is substituted by another letter to form the ciphertext. It is a simplest
 form of substitution cipher scheme.
 
 This cryptosystem is generally referred to as the Shift Cipher. The
-concept is to replace each alphabet by another alphabet which is \textbf{\textquoteleft shifted\textquoteright{}}
+concept is to replace each alphabet by another alphabet which is \textbf{`shifted'}
 by some fixed number between 0 and 25.
 
-For this type of scheme, both sender and receiver agree on a \textquoteleft secret
-shift number\textquoteright{} for shifting the alphabet. This number
-which is between 0 and 25 becomes the key of encryption.
+For this type of scheme, both sender and receiver agree on a `secret
+shift number' for shifting the alphabet. This number which is between
+0 and 25 becomes the key of encryption.
 
-The name \textbf{\textquoteleft Caesar Cipher\textquoteright{}} is
-occasionally used to describe the Shift Cipher when the \textbf{\textquoteleft shift
-of three\textquoteright{}} is used.
+The name \textbf{`Caesar Cipher'} is occasionally used to describe
+the Shift Cipher when the \textbf{`shift of three'} is used.
 
 \paragraph{Process of Shift Cipher}
 \begin{itemize}
 \item In order to encrypt a plaintext letter, the sender positions the sliding
 ruler underneath the first set of plaintext letters and slides it
-to LEFT by the number of positions of the secret shift.
+to LEFT by the number of positions of the secret shift. 
 \item The plaintext letter is then encrypted to the ciphertext letter on
 the sliding ruler underneath. The result of this process is depicted
 in the following illustration for an agreed shift of three positions.
-In this case, the plaintext \textbf{\textquoteleft EXAMPLE\textquoteright{}}
-is encrypted to the ciphertext \textbf{\textquoteleft HADPSOH\textquoteright }.
-Here is the ciphertext alphabet for a Shift of 3 :
+In this case, the plaintext \textbf{`EXAMPLE'} is encrypted to the
+ciphertext \textbf{`HADPSOH'}. Here is the ciphertext alphabet for
+a Shift of 3 : 
 \end{itemize}
 \begin{center}
+{\scriptsize{}}%
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline 
-{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
+{\scriptsize{}$P_{t}$} & {\scriptsize{}A} & {\scriptsize{}B} & {\scriptsize{}C} & {\scriptsize{}D} & {\scriptsize{}E} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}I} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}M} & {\scriptsize{}N} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}Q} & {\scriptsize{}R} & {\scriptsize{}S} & {\scriptsize{}T } & {\scriptsize{}U} & {\scriptsize{}V} & {\scriptsize{}W} & {\scriptsize{}X} & {\scriptsize{}Y} & {\scriptsize{}Z}\tabularnewline
 \hline 
 \hline 
-{\footnotesize{}$C_t$} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C}\tabularnewline
+{\scriptsize{}$C_{t}$} & {\scriptsize{}D} & {\scriptsize{}E} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}I} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}M} & {\scriptsize{}N} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}Q} & {\scriptsize{}R} & {\scriptsize{}S} & {\scriptsize{}T} & {\scriptsize{}U} & {\scriptsize{}V} & {\scriptsize{}W} & {\scriptsize{}X} & {\scriptsize{}Y} & {\scriptsize{}Z} & {\scriptsize{}A} & {\scriptsize{}B} & {\scriptsize{}C}\tabularnewline
 \hline 
-\end{tabular}
+\end{tabular}{\scriptsize\par}
 \par\end{center}
 \begin{itemize}
 \item On receiving the ciphertext, the receiver who also knows the secret
 shift, positions his sliding ruler underneath the ciphertext alphabet
-and slides it to RIGHT by the agreed shift number, 3 in this case.
+and slides it to RIGHT by the agreed shift number, 3 in this case. 
 \item He then replaces the ciphertext letter by the plaintext letter on
-the sliding ruler underneath. Hence the ciphertext \textbf{\textquoteleft HADPSOH\textquoteright{}}
-is decrypted to \textbf{\textquoteleft EXAMPLE\textquoteright }. To
-decrypt a message encoded with a Shift of 3, generate the plaintext
-alphabet using a shift of \textquoteleft -3\textquoteright{} as shown
-below \textminus{}
+the sliding ruler underneath. Hence the ciphertext \textbf{`HADPSOH'}
+is decrypted to \textbf{`EXAMPLE'}. To decrypt a message encoded
+with a Shift of 3, generate the plaintext alphabet using a shift of
+`-3' as shown below \textminus{} 
 \end{itemize}
 \begin{center}
-{\footnotesize{}}%
+{\scriptsize{}}%
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline 
-{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
+{\scriptsize{}$P_{t}$} & {\scriptsize{}A} & {\scriptsize{}B} & {\scriptsize{}C} & {\scriptsize{}D} & {\scriptsize{}E} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}I} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}M} & {\scriptsize{}N} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}Q} & {\scriptsize{}R} & {\scriptsize{}S} & {\scriptsize{}T} & {\scriptsize{}U} & {\scriptsize{}V} & {\scriptsize{}W} & {\scriptsize{}X} & {\scriptsize{}Y} & {\scriptsize{}Z}\tabularnewline
 \hline 
 \hline 
-{\footnotesize{}$C_t$} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W}\tabularnewline
+{\scriptsize{}$C_{t}$} & {\scriptsize{}X} & {\scriptsize{}Y} & {\scriptsize{}Z} & {\scriptsize{}A} & {\scriptsize{}B} & {\scriptsize{}C} & {\scriptsize{}D} & {\scriptsize{}E} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}I} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}M} & {\scriptsize{}N} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}Q} & {\scriptsize{}R} & {\scriptsize{}S} & {\scriptsize{}T} & {\scriptsize{}U} & {\scriptsize{}V} & {\scriptsize{}W}\tabularnewline
 \hline 
-\end{tabular}{\footnotesize\par}
+\end{tabular}{\scriptsize\par}
+\par\end{center}
+
+\begin{center}
+ 
 \par\end{center}
 
 \paragraph{Algorithm}
 \begin{description}
-\item [{Encryption:}] $C \equiv E(k,P) \equiv (P+k) \bmod 26$
-\item [{Decryption:}] $P \equiv D(k,C) \equiv (C-k) \bmod 26$
+\item [{Encryption:}] $C\equiv E(k,P)\equiv(P+k)\bmod26$ 
+\item [{Decryption:}] $P\equiv D(k,C)\equiv(C-k)\bmod26$ 
 \end{description}
 
 \paragraph{Security Value :}
@@ -1026,8 +1050,8 @@ be used for encoding and decoding.
 
 \paragraph{Algorithm}
 \begin{description}
-\item [{Encryption:}] $C \equiv E(P,k=13) \equiv (P+13) \bmod 26$
-\item [{Decryption:}] $P \equiv D(C,k=13) \equiv (C-13) \bmod 26$
+\item [{Encryption:}] $C\equiv E(P,k=13)\equiv(P+13)\bmod26$ 
+\item [{Decryption:}] $P\equiv D(C,k=13)\equiv(C-13)\bmod26$ 
 \end{description}
 
 \paragraph{Security Value : }
@@ -1084,11 +1108,11 @@ as frequently used.
 
 \begin{center}
 The following chart shows the frequency of each letter of the alphabet
-for the English language:
+for the English language: 
 \par\end{center}
 
 \begin{center}
-\includegraphics{\string"Picture/Cryptography_Notes (1)\string".png}
+\includegraphics{\string"Picture/Cryptography_Notes (1)\string".png} 
 \par\end{center}
 
 \medskip{}
@@ -1138,32 +1162,32 @@ This permutation is the secret key of the scheme.
 
 \paragraph{Process of Simple Substitution Cipher}
 \begin{itemize}
-\item Take the alphabets A, B, C,$\:\ldots\:$, Z in the natural order.
+\item Take the alphabets A, B, C,$\:\ldots\:$, Z in the natural order. 
 \item The sender and the receiver decide on a randomly selected permutation
-of the letters of the alphabet.
+of the letters of the alphabet. 
 \item Underneath the natural order alphabets, write out the chosen permutation
 of the letters of the alphabet. For encryption, sender replaces each
 plaintext letters by substituting the permutation letter that is directly
 beneath it in the table. This process is shown in the following illustration.
 In this example, the chosen permutation is given below. The plaintext
-\textbf{\textquoteleft EXAMPLE\textquoteright{}} is encrypted to \textbf{\textquoteleft TBQDHST\textquoteright }.
+\textbf{`EXAMPLE'} is encrypted to \textbf{`TBQDHST'}. 
 \end{itemize}
 \begin{center}
-{\footnotesize{}}%
+{\scriptsize{}}%
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline 
-{\footnotesize{}$P_t$} & {\footnotesize{}A} & {\footnotesize{}B} & {\footnotesize{}C} & {\footnotesize{}D} & {\footnotesize{}E} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}I} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}M} & {\footnotesize{}N} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}Q} & {\footnotesize{}R} & {\footnotesize{}S} & {\footnotesize{}T} & {\footnotesize{}U} & {\footnotesize{}V} & {\footnotesize{}W} & {\footnotesize{}X} & {\footnotesize{}Y} & {\footnotesize{}Z}\tabularnewline
+{\scriptsize{}$P_{t}$} & {\scriptsize{}A} & {\scriptsize{}B} & {\scriptsize{}C} & {\scriptsize{}D} & {\scriptsize{}E} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}I} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}M} & {\scriptsize{}N} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}Q} & {\scriptsize{}R} & {\scriptsize{}S} & {\scriptsize{}T} & {\scriptsize{}U} & {\scriptsize{}V} & {\scriptsize{}W} & {\scriptsize{}X} & {\scriptsize{}Y} & {\scriptsize{}Z}\tabularnewline
 \hline 
 \hline 
-{\footnotesize{}$C_t$} & {\footnotesize{}Q} & {\footnotesize{}W} & {\footnotesize{}E} & {\footnotesize{}R} & {\footnotesize{}T} & {\footnotesize{}Y} & {\footnotesize{}U} & {\footnotesize{}I} & {\footnotesize{}O} & {\footnotesize{}P} & {\footnotesize{}A} & {\footnotesize{}S} & {\footnotesize{}D} & {\footnotesize{}F} & {\footnotesize{}G} & {\footnotesize{}H} & {\footnotesize{}J} & {\footnotesize{}K} & {\footnotesize{}L} & {\footnotesize{}Z} & {\footnotesize{}X} & {\footnotesize{}C} & {\footnotesize{}V} & {\footnotesize{}B} & {\footnotesize{}N} & {\footnotesize{}M}\tabularnewline
+{\scriptsize{}$C_{t}$} & {\scriptsize{}Q} & {\scriptsize{}W} & {\scriptsize{}E} & {\scriptsize{}R} & {\scriptsize{}T} & {\scriptsize{}Y} & {\scriptsize{}U} & {\scriptsize{}I} & {\scriptsize{}O} & {\scriptsize{}P} & {\scriptsize{}A} & {\scriptsize{}S} & {\scriptsize{}D} & {\scriptsize{}F} & {\scriptsize{}G} & {\scriptsize{}H} & {\scriptsize{}J} & {\scriptsize{}K} & {\scriptsize{}L} & {\scriptsize{}Z} & {\scriptsize{}X} & {\scriptsize{}C} & {\scriptsize{}V} & {\scriptsize{}B} & {\scriptsize{}N} & {\scriptsize{}M}\tabularnewline
 \hline 
-\end{tabular}{\footnotesize\par}
+\end{tabular}{\scriptsize\par}
 \par\end{center}
 \begin{itemize}
 \item On receiving the ciphertext, the receiver, who also knows the randomly
 chosen permutation, replaces each ciphertext letter on the bottom
 row with the corresponding plaintext letter in the top row. The ciphertext
-\textbf{\textquoteleft TBQDHST\textquoteright{}} is decrypted to \textbf{\textquoteleft EXAMPLE\textquoteright }.
+\textbf{`TBQDHST'} is decrypted to \textbf{`EXAMPLE'}. 
 \end{itemize}
 
 \end{document}
